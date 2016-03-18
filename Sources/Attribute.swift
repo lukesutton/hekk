@@ -1,4 +1,4 @@
-enum Attribute {
+public enum Attribute {
   case Src(String)
   case Name(String)
   case ID(String)

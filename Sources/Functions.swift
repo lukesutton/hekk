@@ -1,28 +1,28 @@
-func div(attributes: [Attribute]? = nil, _ children: NodeConvertible...) -> Tag {
+public func div(attributes: [Attribute]? = nil, _ children: NodeConvertible...) -> Tag {
   return tagWithChildren(.Div, attributes: attributes, children: children)
 }
 
-func h1(attributes: [Attribute]? = nil, _ children: NodeConvertible...) -> Tag {
+public func h1(attributes: [Attribute]? = nil, _ children: NodeConvertible...) -> Tag {
   return tagWithChildren(.H1, attributes: attributes, children: children)
 }
 
-func h1(children: NodeConvertible...) -> Tag {
+public func h1(children: NodeConvertible...) -> Tag {
   return tagWithChildren(.H1, attributes: [], children: children)
 }
 
-func p(attributes: [Attribute]? = nil, _ children: NodeConvertible...) -> Tag {
+public func p(attributes: [Attribute]? = nil, _ children: NodeConvertible...) -> Tag {
   return tagWithChildren(.P, attributes: attributes, children: children)
 }
 
-func p(children: NodeConvertible...) -> Tag {
+public func p(children: NodeConvertible...) -> Tag {
   return tagWithChildren(.P, attributes: [], children: children)
 }
 
-func strong(attributes: [Attribute]? = nil, _ children: NodeConvertible...) -> Tag {
+public func strong(attributes: [Attribute]? = nil, _ children: NodeConvertible...) -> Tag {
   return tagWithChildren(.Strong, attributes: attributes, children: children)
 }
 
-func strong(children: NodeConvertible...) -> Tag {
+public func strong(children: NodeConvertible...) -> Tag {
   return tagWithChildren(.Strong, attributes: [], children: children)
 }
 

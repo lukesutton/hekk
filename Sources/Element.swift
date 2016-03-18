@@ -1,4 +1,4 @@
-enum Element {
+public enum Element {
   case H1
   case H2
   case H3
