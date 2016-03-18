@@ -1,14 +1,14 @@
-protocol Node {
+public protocol Node {
   func toString() -> String
 }
 
 extension Text: Node {
-  func toString() -> String {
+  public func toString() -> String {
     return self.value
   }
 }
 extension Tag: Node {
-  func toString() -> String {
+  public func toString() -> String {
     let childrenString = self.children.map {$0.toString()}.joinWithSeparator("")
     let attributesString = self.attributes.map {$0.toString()}.joinWithSeparator(" ")
     let elementString = self.element.toString()
