@@ -8,6 +8,12 @@ extension String: NodeConvertible {
   }
 }
 
+extension Int: NodeConvertible {
+  func toNode() -> Node {
+    return Text(value: String(self))
+  }
+}
+
 extension Tag: NodeConvertible {
   func toNode() -> Node {
     return self

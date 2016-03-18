@@ -10,10 +10,9 @@ extension Text: Node {
 extension Tag: Node {
   func toString() -> String {
     let childrenString = self.children.map {$0.toString()}.joinWithSeparator("")
-    // let attributesString =
-    // Is this self closing?
+    let attributesString = self.attributes.map {$0.toString()}.joinWithSeparator(" ")
     let elementString = self.element.toString()
-    let output = "<\(elementString)>\(childrenString)</\(elementString)>"
+    let output = "<\(elementString) \(attributesString)>\(childrenString)</\(elementString)>"
     return output
   }
 }

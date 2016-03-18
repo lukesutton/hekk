@@ -9,7 +9,9 @@ enum Attribute {
     switch self {
       case let Data(label, value): return "data-\(label)=\"\(value)\""
       case let ClassName(value): return "class=\"\(value)\""
-      default: return "\(self)".lowercaseString
+      case let Src(value): return "src=\"\(value)\""
+      case let Name(value): return "name=\"\(value)\""
+      case let ID(value): return "id=\"\(value)\""
     }
   }
 }
