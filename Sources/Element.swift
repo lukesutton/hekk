@@ -24,6 +24,7 @@ enum Element {
   case Div
   case Custom(String)
   case P
+  case Strong
 
   func toString() -> String {
     switch self {
