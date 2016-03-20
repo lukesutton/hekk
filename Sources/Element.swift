@@ -1,4 +1,6 @@
 public enum Element {
+  case Wrapper
+
   case H1
   case H2
   case H3

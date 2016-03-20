@@ -19,3 +19,9 @@ extension Tag: NodeConvertible {
     return self
   }
 }
+
+extension Array: NodeConvertible {
+  public func toNode() -> Node {
+    return wrapper(self)
+  }
+}
