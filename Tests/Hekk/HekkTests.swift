@@ -1,4 +1,4 @@
-@testable import Hekk
+import Hekk
 import XCTest
 
 class HekkTests: XCTestCase {
