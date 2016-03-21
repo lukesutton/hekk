@@ -1,27 +1,15 @@
 public protocol NodeConvertible {
-  func toNode() -> Node
+  var node: Node { get }
 }
 
-extension String: NodeConvertible {
-  public func toNode() -> Node {
-    return Text(value: self)
-  }
-}
-
-extension Int: NodeConvertible {
-  public func toNode() -> Node {
-    return Text(value: String(self))
-  }
-}
-
-extension Tag: NodeConvertible {
-  public func toNode() -> Node {
+extension NodeConvertible where Self: Node {
+  public var node: Node {
     return self
   }
 }
 
-extension Array: NodeConvertible {
-  public func toNode() -> Node {
-    return wrapper(self)
+extension String: NodeConvertible {
+  public var node: Node {
+    return Text(value: self)
   }
 }

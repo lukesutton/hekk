@@ -1,23 +1,33 @@
 public protocol Node {
-  func toString() -> String
+  var stringValue: String { get }
 }
 
-extension Text: Node {
-  public func toString() -> String {
-    return self.value
+public extension Node where Self: TagWithChildren {
+  var stringValue: String {
+    let childrenString = self.children.map {$0.node.stringValue}.joinWithSeparator(" ")
+
+    if attributes.isEmpty {
+      let output = "<\(tag)>\(childrenString)</\(tag)>"
+      return output
+    }
+    else {
+      let attributesString = self.attributes.map {$0.stringValue}.joinWithSeparator(" ")
+      let output = "<\(tag) \(attributesString)>\(childrenString)</\(tag)>"
+      return output
+    }
   }
 }
-extension Tag: Node {
-  public func toString() -> String {
-    let childrenString = self.children.map {$0.toString()}.joinWithSeparator("")
-    switch self.element {
-      case Element.Wrapper:
-        return childrenString
-      default:
-        let attributesString = self.attributes.map {$0.toString()}.joinWithSeparator(" ")
-        let elementString = self.element.toString()
-        let output = "<\(elementString) \(attributesString)>\(childrenString)</\(elementString)>"
-        return output
+
+public extension Node where Self: SelfClosingTag {
+  var stringValue: String {
+    if attributes.isEmpty {
+      let output = "<\(tag)/>"
+      return output
+    }
+    else {
+      let attributesString = self.attributes.map {$0.stringValue}.joinWithSeparator(" ")
+      let output = "<\(tag) \(attributesString)/>"
+      return output
     }
   }
 }
