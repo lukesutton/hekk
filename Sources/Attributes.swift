@@ -1,6 +1,6 @@
-public struct Attr {
+public struct Attributes {
   private init() {}
-  
+
   public struct Src: Attribute, SimpleAttribute {
     public let label = "attr"
     public var value: String

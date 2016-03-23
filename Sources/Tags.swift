@@ -1,6 +1,6 @@
-public struct Tag {
+public struct Tags {
   private init() {}
-  
+
   public struct A: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
