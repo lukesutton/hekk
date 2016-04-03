@@ -1,43 +1,43 @@
 public struct Attributes {
   private init() {}
 
-  public struct Src: Attribute, SimpleAttribute {
+  public struct Src: Attribute {
     public let label = "attr"
-    public var value: String
+    public var stringValue: String
     public init(_ value: String) {
-      self.value = value
+      self.stringValue = value
     }
   }
 
-  public struct ClassName: Attribute, SimpleAttribute {
+  public struct ClassName: Attribute {
     public let label = "class"
-    public var value: String
+    public var stringValue: String
     public init(_ value: String) {
-      self.value = value
+      self.stringValue = value
     }
   }
 
-  public struct ID: Attribute, SimpleAttribute {
+  public struct ID: Attribute {
     public let label = "id"
-    public var value: String
+    public var stringValue: String
     public init(_ value: String) {
-      self.value = value
+      self.stringValue = value
     }
   }
 
-  public struct Href: Attribute, SimpleAttribute {
+  public struct Href: Attribute {
     public let label = "href"
-    public var value: String
+    public var stringValue: String
     public init(_ value: String) {
-      self.value = value
+      self.stringValue = value
     }
   }
 
-  public struct Title: Attribute, SimpleAttribute {
+  public struct Title: Attribute {
     public let label = "title"
-    public var value: String
+    public var stringValue: String
     public init(_ value: String) {
-      self.value = value
+      self.stringValue = value
     }
   }
 }
