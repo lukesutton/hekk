@@ -2,14 +2,14 @@ public struct Attributes {
   private init() {}
 
   public struct Src: Attribute {
-    public let label = "attr"
+    public let label = "src"
     public var stringValue: String
     public init(_ value: String) {
       self.stringValue = value
     }
   }
 
-  public struct ClassName: Attribute {
+  public struct Class: Attribute {
     public let label = "class"
     public var stringValue: String
     public init(_ value: String) {

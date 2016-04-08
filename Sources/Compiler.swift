@@ -10,35 +10,35 @@ public struct Compiler {
     self.spec = spec
   }
 
-  public func compile(node: Node) -> String {
-    return compileNode(node, forSpec: spec)
+  public func compile(node: NodeConvertible) -> String {
+    return compileNode(node.node, forSpec: spec).joinWithSeparator("\r\n")
   }
 
-  func compileNode(node: Node, forSpec spec: Spec) -> String {
+  func compileNode(node: Node, forSpec spec: Spec, indentLevel: Int = 0) -> [String] {
+    let indent = String(count: indentLevel * 2, repeatedValue: Character(" "))
+
     switch node {
       case let node as SelfClosingTag:
         let attrs =  node.attributes.map {"\($0.label)=\"\($0.stringValue)\""}.joinWithSeparator(" ")
         if attrs.isEmpty {
-          return "<\(node.tag)/>"
+          return ["\(indent)<\(node.tag)/>"]
         }
         else {
-          return ["<", node.tag, " ", attrs, "/>"].joinWithSeparator("")
+          return ["\(indent)<\(node.tag) \(attrs)/>"]
         }
       case let node as TagWithChildren:
         let attrs =  node.attributes.map {"\($0.label)=\"\($0.stringValue)\""}.joinWithSeparator(" ")
-        let children = node.children.map {compileNode($0.node, forSpec: spec)}.joinWithSeparator(" ")
+        let children = node.children.flatMap {compileNode($0.node, forSpec: spec, indentLevel: indentLevel + 1)}
         if attrs.isEmpty {
-          return ["<", node.tag, ">", children, "</", node.tag, ">"].filter {!$0.isEmpty}.joinWithSeparator("")
+          return ["\(indent)<\(node.tag)>"] + children + ["\(indent)</\(node.tag)>"]
         }
         else {
-          return ["<", node.tag, " ", attrs, ">", children, "</", node.tag, ">"].filter {!$0.isEmpty}.joinWithSeparator("")
+          return ["\(indent)<\(node.tag) \(attrs)>"] + children + ["\(indent)</\(node.tag)>"]
         }
-      case let node as Fragment:
-        return node.children.map {compileNode($0.node, forSpec: spec)}.joinWithSeparator(" ")
       case let node as Text:
-        return node.value
+        return [indent + node.value]
       default:
-        return ""
+        return []
     }
   }
 }

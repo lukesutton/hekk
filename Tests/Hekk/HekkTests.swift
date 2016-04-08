@@ -8,6 +8,8 @@ class HekkTests: XCTestCase {
   func testDivWithAttributes() {
     let tag = T.Div([A.ID("header")], T.P("no"))
     let compiler = Compiler(.HTML5)
+
+    print(compiler.compile(tag))
     XCTAssertEqual(compiler.compile(tag), "<div id=\"header\"><p>no</p></div>")
   }
 }
