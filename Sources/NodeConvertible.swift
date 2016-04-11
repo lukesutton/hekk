@@ -13,3 +13,15 @@ extension String: NodeConvertible {
     return Text(value: self)
   }
 }
+
+extension Int: NodeConvertible {
+  public var node: Node {
+    return Text(value: String(self))
+  }
+}
+
+extension Double: NodeConvertible {
+  public var node: Node {
+    return Text(value: String(self))
+  }
+}

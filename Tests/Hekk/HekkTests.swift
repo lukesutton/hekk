@@ -6,7 +6,7 @@ class HekkTests: XCTestCase {
   typealias T = Hekk.Tags
 
   func testDivWithAttributes() {
-    let tag = T.Div([A.ID("header")], T.P("no"))
+    let tag = T.Form("What")
     let compiler = Compiler(.HTML5)
 
     print(compiler.compile(tag))
