@@ -26,7 +26,7 @@ The list of supported tags and their attributes will be:
 * [x] head
 * [x] meta
 * [x] link
-* [ ] script
+* [x] script
 * [x] body
 * [x] div
 * [ ] table

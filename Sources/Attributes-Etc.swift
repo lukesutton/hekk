@@ -95,6 +95,11 @@ extension Attributes {
     }
   }
 
+  public struct Defer: Attribute, BooleanAttribute {
+    public let label = "defer"
+    public let stringValue = "defer"
+  }
+
   public struct HTTPEquiv: Attribute {
     public enum Value: String {
       case ContentSecurityPolicy = "Content-Security-Policy"
@@ -258,6 +263,24 @@ extension Attributes {
     public let stringValue: String
     public init(_ value: Value) {
       self.stringValue = value.stringValue
+    }
+  }
+
+  public struct Text: Attribute {
+    public let label = "text"
+    public let stringValue: String
+    public init(_ value: String) {
+      self.stringValue = value
+    }
+  }
+
+  // In case you're wondering, this has an annoying name because `Type` is a
+  // reserved word in Swift.
+  public struct TypeAttr: Attribute {
+    public let label = "type"
+    public let stringValue: String
+    public init(_ value: String) {
+      self.stringValue = value
     }
   }
 
