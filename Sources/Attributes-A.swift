@@ -1,20 +1,4 @@
 extension Attributes {
-  public struct Href: Attribute {
-    public let label = "href"
-    public let stringValue: String
-    public init(_ value: String) {
-      self.stringValue = value
-    }
-  }
-
-  public struct HrefLang: Attribute {
-    public let label = "hreflang"
-    public let stringValue: String
-    public init(_ value: String) {
-      self.stringValue = value
-    }
-  }
-
   public struct Rel: Attribute {
     public enum Value: String {
       case Alternate = "alternate"
