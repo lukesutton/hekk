@@ -1,17 +1,11 @@
-extension Tags {
-  public struct Form: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "form"
-
-    public init() {}
+extension Tags.Input {
+  public static func hidden(name: String, value: String, attributes extraAttrs: [Attribute] = []) -> NodeConvertible {
+    let attributes: [Attribute] = extraAttrs + [Attributes.InputType(.Hidden), Attributes.Name(name), Attributes.Value(value)]
+    return Tags.Input(attributes)
   }
 
-  public struct Input: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "input"
-
-    public init() {}
+  public static func text(name: String, value: String, attributes extraAttrs: [Attribute] = []) -> NodeConvertible {
+    let attributes: [Attribute] = extraAttrs + [Attributes.InputType(.Text), Attributes.Name(name), Attributes.Value(value)]
+    return Tags.Input(attributes)
   }
 }

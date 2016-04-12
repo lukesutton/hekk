@@ -23,6 +23,14 @@ extension Attributes {
     }
   }
 
+  public struct Value: Attribute {
+    public let label = "value"
+    public var stringValue: String
+    public init(_ value: String) {
+      self.stringValue = value
+    }
+  }
+
   public struct AcceptCharset: Attribute {
     public let label = "accept-charset"
     public var stringValue: String

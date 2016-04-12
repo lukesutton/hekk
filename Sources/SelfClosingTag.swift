@@ -1,16 +1,14 @@
 public protocol SelfClosingTag {
-  associatedtype AttributeType
-
   var tag: String { get }
   var attributes: [Attribute] { get set }
 
   init()
-  init(_ attributes: [AttributeType])
+  init(_ attributes: [Attribute])
 }
 
 public extension SelfClosingTag {
-  init(_ attributes: [AttributeType]) {
+  init(_ attributes: [Attribute]) {
     self.init()
-    self.attributes = attributes.map {$0 as! Attribute}
+    self.attributes = attributes
   }
 }
