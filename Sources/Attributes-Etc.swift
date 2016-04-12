@@ -61,6 +61,49 @@ extension Attributes {
     }
   }
 
+  public struct Charset: Attribute {
+    public let label = "charset"
+    public let stringValue: String
+    public init(_ value: String) {
+      self.stringValue = value
+    }
+  }
+
+  public struct Content: Attribute {
+    public let label = "content"
+    public let stringValue: String
+    public init(_ value: String) {
+      self.stringValue = value
+    }
+  }
+
+  public struct CrossOrigin: Attribute {
+    public enum Value: String {
+      case Anonymous = "anonymous"
+      case UseCredentials = "use-credentials"
+    }
+
+    public let label = "crossorigin"
+    public let stringValue: String
+    public init(_ value: Value) {
+      self.stringValue = value.rawValue
+    }
+  }
+
+  public struct HTTPEquiv: Attribute {
+    public enum Value: String {
+      case ContentSecurityPolicy = "Content-Security-Policy"
+      case DefaultStyle = "default-style"
+      case Refresh = "refresh"
+    }
+
+    public let label = "http-equiv"
+    public let stringValue: String
+    public init(_ value: Value) {
+      self.stringValue = value.rawValue
+    }
+  }
+
   public struct Href: Attribute {
     public let label = "href"
     public let stringValue: String
@@ -157,7 +200,7 @@ extension Attributes {
       self.stringValue = value
     }
   }
-  
+
   public struct Rel: Attribute {
     public enum Value: String {
       case Alternate = "alternate"
@@ -210,6 +253,14 @@ extension Attributes {
     public let stringValue: String
     public init(_ value: Value) {
       self.stringValue = value.stringValue
+    }
+  }
+
+  public struct XMLNS: Attribute {
+    public let label = "xmlns"
+    public let stringValue: String
+    public init(_ value: String = "http://www.w3.org/1999/xhtml") {
+      self.stringValue = value
     }
   }
 }

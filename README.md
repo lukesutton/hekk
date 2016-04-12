@@ -21,11 +21,11 @@ The aim is to support the most common tags and attributes — common as defined 
 
 The list of supported tags and their attributes will be:
 
-* [ ] html
-* [ ] title
-* [ ] head
-* [ ] meta
-* [ ] link
+* [x] html
+* [x] title
+* [x] head
+* [x] meta
+* [x] link
 * [ ] script
 * [ ] body
 * [ ] div
@@ -54,7 +54,7 @@ The list of supported tags and their attributes will be:
 * [ ] h6
 * [ ] nav
 * [ ] img
-* [ ] a
+* [x] a
 * [ ] article
 * [ ] header
 * [ ] footer
