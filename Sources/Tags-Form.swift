@@ -1,8 +1,5 @@
 extension Tags {
-  public struct Form: Node, NodeConvertible, TagWithChildren, BodyNode {
-    public typealias AttributeType = FormAttribute
-    public typealias NodeType = BodyNode
-
+  public struct Form: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "form"
@@ -10,10 +7,7 @@ extension Tags {
     public init() {}
   }
 
-  public struct Input: Node, NodeConvertible, TagWithChildren, BodyNode {
-    public typealias AttributeType = InputAttribute
-    public typealias NodeType = BodyNode
-
+  public struct Input: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "input"
@@ -21,6 +15,3 @@ extension Tags {
     public init() {}
   }
 }
-
-public protocol FormAttribute: Attribute {}
-public protocol InputAttribute: Attribute {}

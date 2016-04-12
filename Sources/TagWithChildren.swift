@@ -1,47 +1,44 @@
 public protocol TagWithChildren {
-  associatedtype AttributeType
-  associatedtype NodeType
-
   var attributes: [Attribute] { get set }
   var children: [NodeConvertible] { get set }
   var tag: String { get }
 
   init()
-  init(_ attributes: [AttributeType], _ children: [NodeType])
-  init(_ attributes: [AttributeType], _ children: NodeType...)
-  init(_ attributes: [AttributeType])
-  init(_ children: [NodeType])
-  init(_ children: NodeType...)
+  init(_ attributes: [Attribute], _ children: [NodeConvertible])
+  init(_ attributes: [Attribute], _ children: NodeConvertible...)
+  init(_ attributes: [Attribute])
+  init(_ children: [NodeConvertible])
+  init(_ children: NodeConvertible...)
 }
 
 public extension TagWithChildren {
-  init(_ attributes: [AttributeType], _ children: [NodeType]) {
+  init(_ attributes: [Attribute], _ children: [NodeConvertible]) {
     self.init()
-    self.attributes = attributes.map {$0 as! Attribute}
-    self.children = children.map {$0 as! NodeConvertible}
+    self.attributes = attributes
+    self.children = children
   }
 
-  init(_ attributes: [AttributeType], _ children: NodeType...) {
+  init(_ attributes: [Attribute], _ children: NodeConvertible...) {
     self.init()
-    self.attributes = attributes.map {$0 as! Attribute}
-    self.children = children.map {$0 as! NodeConvertible}
+    self.attributes = attributes
+    self.children = children
   }
 
-  init(_ attributes: [AttributeType]) {
+  init(_ attributes: [Attribute]) {
     self.init()
-    self.attributes = attributes.map {$0 as! Attribute}
+    self.attributes = attributes
     self.children = []
   }
 
-  init(_ children: [NodeType]) {
+  init(_ children: [NodeConvertible]) {
     self.init()
     self.attributes = []
-    self.children = children.map {$0 as! NodeConvertible}
+    self.children = children
   }
 
-  init(_ children: NodeType...) {
+  init(_ children: NodeConvertible...) {
     self.init()
     self.attributes = []
-    self.children = children.map {$0 as! NodeConvertible}
+    self.children = children
   }
 }

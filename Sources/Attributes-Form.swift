@@ -1,5 +1,5 @@
 extension Attributes {
-  public struct Accept: Attribute, FormAttribute, InputAttribute {
+  public struct Accept: Attribute {
     public let label = "accept"
     public var stringValue: String
     public init(_ value: String) {
@@ -7,7 +7,7 @@ extension Attributes {
     }
   }
 
-  public struct AutoComplete: Attribute, FormAttribute, InputAttribute {
+  public struct AutoComplete: Attribute {
     public let label = "autocomplete"
     public var stringValue: String
     public init(_ value: Bool) {
@@ -15,7 +15,7 @@ extension Attributes {
     }
   }
 
-  public struct Name: Attribute, FormAttribute, InputAttribute {
+  public struct Name: Attribute {
     public let label = "name"
     public var stringValue: String
     public init(_ value: String) {
@@ -23,7 +23,7 @@ extension Attributes {
     }
   }
 
-  public struct AcceptCharset: Attribute, FormAttribute {
+  public struct AcceptCharset: Attribute {
     public let label = "accept-charset"
     public var stringValue: String
     public init(_ value: String) {
@@ -31,7 +31,7 @@ extension Attributes {
     }
   }
 
-  public struct Action: Attribute, FormAttribute {
+  public struct Action: Attribute {
     public let label = "action"
     public var stringValue: String
     public init(_ value: String) {
@@ -39,7 +39,7 @@ extension Attributes {
     }
   }
 
-  public struct Method: Attribute, FormAttribute {
+  public struct Method: Attribute {
     public enum MethodValue {
       case GET
       case POST
@@ -52,7 +52,7 @@ extension Attributes {
     }
   }
 
-  public struct EncType: Attribute, FormAttribute {
+  public struct EncType: Attribute {
     public let label = "enctype"
     public var stringValue: String
     public init(_ value: String) {
@@ -60,7 +60,7 @@ extension Attributes {
     }
   }
 
-  public struct InputType: Attribute, InputAttribute {
+  public struct InputType: Attribute {
     public enum Value: String {
       case Button = "button"
       case Checkbox = "checkbox"
