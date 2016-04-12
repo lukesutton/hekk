@@ -20,11 +20,12 @@ public struct Compiler {
     switch node {
       case let node as SelfClosingTag:
         let attrs =  compileAttributes(node.attributes, forSpec: spec)
+        let suffix = spec != .HTML5 ? " /" : ""
         if attrs.isEmpty {
-          return ["\(indent)<\(node.tag)/>"]
+          return ["\(indent)<\(node.tag)\(suffix)>"]
         }
         else {
-          return ["\(indent)<\(node.tag) \(attrs)/>"]
+          return ["\(indent)<\(node.tag) \(attrs)\(suffix)>"]
         }
       case let node as TagWithChildren:
         let attrs =  compileAttributes(node.attributes, forSpec: spec)
