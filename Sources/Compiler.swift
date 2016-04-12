@@ -19,7 +19,7 @@ public struct Compiler {
 
     switch node {
       case let node as SelfClosingTag:
-        let attrs =  node.attributes.map {"\($0.label)=\"\($0.stringValue)\""}.joinWithSeparator(" ")
+        let attrs =  compileAttributes(node.attributes, forSpec: spec)
         if attrs.isEmpty {
           return ["\(indent)<\(node.tag)/>"]
         }
@@ -27,7 +27,7 @@ public struct Compiler {
           return ["\(indent)<\(node.tag) \(attrs)/>"]
         }
       case let node as TagWithChildren:
-        let attrs =  node.attributes.map {"\($0.label)=\"\($0.stringValue)\""}.joinWithSeparator(" ")
+        let attrs =  compileAttributes(node.attributes, forSpec: spec)
         let children = node.children.flatMap {compileNode($0.node, forSpec: spec, indentLevel: indentLevel + 1)}
         if attrs.isEmpty {
           return ["\(indent)<\(node.tag)>"] + children + ["\(indent)</\(node.tag)>"]
@@ -40,5 +40,17 @@ public struct Compiler {
       default:
         return []
     }
+  }
+
+  private func compileAttributes(attributes: [Attribute], forSpec spec: Spec) -> String {
+    return attributes.map { attr in
+      if spec == .HTML5 && attr is BooleanAttribute {
+        return attr.label
+      }
+      else  {
+        return "\(attr.label)=\"\(attr.stringValue)\""
+      }
+
+    }.joinWithSeparator(" ")
   }
 }

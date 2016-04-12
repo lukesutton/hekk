@@ -61,6 +61,11 @@ extension Attributes {
     }
   }
 
+  public struct Async: Attribute, BooleanAttribute {
+    public let label = "async"
+    public let stringValue = "async"
+  }
+
   public struct Charset: Attribute {
     public let label = "charset"
     public let stringValue: String
