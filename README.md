@@ -27,8 +27,8 @@ The list of supported tags and their attributes will be:
 * [x] meta
 * [x] link
 * [ ] script
-* [ ] body
-* [ ] div
+* [x] body
+* [x] div
 * [ ] table
 * [ ] thead
 * [ ] tbody
@@ -72,3 +72,14 @@ The list of supported tags and their attributes will be:
 * [ ] span
 * [ ] blockquote
 * [ ] button
+
+## Unlikely to be supported
+
+I have opinions! Specifically, there is a bunch of things I don't think you should be doing in HTML. There is a bunch of stuff that is deprecated, barely used/supported or just a bad idea. That said, it's dead easy to add this stuff yourself if you really need them.
+
+Here is the list of things I _HATE_ and won't support:
+
+* Style attributes; use CSS!
+* Position attributes; see above
+* Event handlers — onclick, onchange etc; These should be specified in your Javascript
+* Old-arse deprecated stuff like cellpadding for tables
