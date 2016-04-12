@@ -1,18 +1,9 @@
 public struct Tags {
   private init() {}
-
   public struct A: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "a"
-
-    public init() {}
-  }
-
-  public struct Audio: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "audio"
 
     public init() {}
   }
@@ -29,46 +20,6 @@ public struct Tags {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "basefont"
-
-    public init() {}
-  }
-
-  public struct Bdi: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "bdi"
-
-    public init() {}
-  }
-
-  public struct Bdo: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "bdo"
-
-    public init() {}
-  }
-
-  public struct Bgsound: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "bgsound"
-
-    public init() {}
-  }
-
-  public struct Big: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "big"
-
-    public init() {}
-  }
-
-  public struct Blink: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "blink"
 
     public init() {}
   }
@@ -113,58 +64,10 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Center: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "center"
-
-    public init() {}
-  }
-
-  public struct Cite: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "cite"
-
-    public init() {}
-  }
-
   public struct Code: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "code"
-
-    public init() {}
-  }
-
-  public struct Colgroup: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "colgroup"
-
-    public init() {}
-  }
-
-  public struct Content: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "content"
-
-    public init() {}
-  }
-
-  public struct Data: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "data"
-
-    public init() {}
-  }
-
-  public struct Datalist: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "datalist"
 
     public init() {}
   }
@@ -181,38 +84,6 @@ public struct Tags {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "del"
-
-    public init() {}
-  }
-
-  public struct Details: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "details"
-
-    public init() {}
-  }
-
-  public struct Dfn: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "dfn"
-
-    public init() {}
-  }
-
-  public struct Dialog: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "dialog"
-
-    public init() {}
-  }
-
-  public struct Dir: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "dir"
 
     public init() {}
   }
@@ -241,14 +112,6 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Element: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "element"
-
-    public init() {}
-  }
-
   public struct Em: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
@@ -265,30 +128,6 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Figcaption: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "figcaption"
-
-    public init() {}
-  }
-
-  public struct Figure: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "figure"
-
-    public init() {}
-  }
-
-  public struct Font: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "font"
-
-    public init() {}
-  }
-
   public struct Footer: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
@@ -301,22 +140,6 @@ public struct Tags {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "form"
-
-    public init() {}
-  }
-
-  public struct Frame: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "frame"
-
-    public init() {}
-  }
-
-  public struct Frameset: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "frameset"
 
     public init() {}
   }
@@ -393,7 +216,7 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Html: Node, NodeConvertible, TagWithChildren {
+  public struct HTML: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "html"
@@ -425,30 +248,6 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Ins: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "ins"
-
-    public init() {}
-  }
-
-  public struct Isindex: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "isindex"
-
-    public init() {}
-  }
-
-  public struct Kbd: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "kbd"
-
-    public init() {}
-  }
-
   public struct Label: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
@@ -473,42 +272,10 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Listing: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "listing"
-
-    public init() {}
-  }
-
   public struct Main: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "main"
-
-    public init() {}
-  }
-
-  public struct Map: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "map"
-
-    public init() {}
-  }
-
-  public struct Mark: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "mark"
-
-    public init() {}
-  }
-
-  public struct Marquee: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "marquee"
 
     public init() {}
   }
@@ -529,66 +296,10 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Meter: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "meter"
-
-    public init() {}
-  }
-
-  public struct Multicol: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "multicol"
-
-    public init() {}
-  }
-
   public struct Nav: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "nav"
-
-    public init() {}
-  }
-
-  public struct Nobr: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "nobr"
-
-    public init() {}
-  }
-
-  public struct Noembed: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "noembed"
-
-    public init() {}
-  }
-
-  public struct Noframes: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "noframes"
-
-    public init() {}
-  }
-
-  public struct Noscript: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "noscript"
-
-    public init() {}
-  }
-
-  public struct Object: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "object"
 
     public init() {}
   }
@@ -617,14 +328,6 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Output: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "output"
-
-    public init() {}
-  }
-
   public struct P: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
@@ -633,90 +336,10 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Picture: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "picture"
-
-    public init() {}
-  }
-
-  public struct Plaintext: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "plaintext"
-
-    public init() {}
-  }
-
   public struct Pre: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "pre"
-
-    public init() {}
-  }
-
-  public struct Progress: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "progress"
-
-    public init() {}
-  }
-
-  public struct Q: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "q"
-
-    public init() {}
-  }
-
-  public struct Rp: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "rp"
-
-    public init() {}
-  }
-
-  public struct Rt: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "rt"
-
-    public init() {}
-  }
-
-  public struct Rtc: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "rtc"
-
-    public init() {}
-  }
-
-  public struct Ruby: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "ruby"
-
-    public init() {}
-  }
-
-  public struct S: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "s"
-
-    public init() {}
-  }
-
-  public struct Samp: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "samp"
 
     public init() {}
   }
@@ -745,42 +368,10 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Shadow: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "shadow"
-
-    public init() {}
-  }
-
-  public struct Small: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "small"
-
-    public init() {}
-  }
-
-  public struct Spacer: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "spacer"
-
-    public init() {}
-  }
-
   public struct Span: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "span"
-
-    public init() {}
-  }
-
-  public struct Strike: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "strike"
 
     public init() {}
   }
@@ -797,30 +388,6 @@ public struct Tags {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "style"
-
-    public init() {}
-  }
-
-  public struct Sub: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "sub"
-
-    public init() {}
-  }
-
-  public struct Summary: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "summary"
-
-    public init() {}
-  }
-
-  public struct Sup: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "sup"
 
     public init() {}
   }
@@ -845,14 +412,6 @@ public struct Tags {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "td"
-
-    public init() {}
-  }
-
-  public struct Template: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "template"
 
     public init() {}
   }
@@ -889,14 +448,6 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Time: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "time"
-
-    public init() {}
-  }
-
   public struct Title: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
@@ -921,42 +472,10 @@ public struct Tags {
     public init() {}
   }
 
-  public struct U: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "u"
-
-    public init() {}
-  }
-
   public struct Ul: Node, NodeConvertible, TagWithChildren {
     public var attributes: [Attribute] = []
     public var children: [NodeConvertible] = []
     public var tag: String = "ul"
-
-    public init() {}
-  }
-
-  public struct Var: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "var"
-
-    public init() {}
-  }
-
-  public struct Video: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "video"
-
-    public init() {}
-  }
-
-  public struct Xmp: Node, NodeConvertible, TagWithChildren {
-    public var attributes: [Attribute] = []
-    public var children: [NodeConvertible] = []
-    public var tag: String = "xmp"
 
     public init() {}
   }
@@ -975,34 +494,6 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Base: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "base"
-
-    public init() {}
-  }
-
-  public struct Col: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "col"
-
-    public init() {}
-  }
-
-  public struct Command: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "command"
-
-    public init() {}
-  }
-
-  public struct Embed: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "embed"
-
-    public init() {}
-  }
-
   public struct Img: Node, NodeConvertible, SelfClosingTag {
     public var attributes: [Attribute] = []
     public var tag: String = "img"
@@ -1017,13 +508,6 @@ public struct Tags {
     public init() {}
   }
 
-  public struct Keygen: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "keygen"
-
-    public init() {}
-  }
-
   public struct Link: Node, NodeConvertible, SelfClosingTag {
     public var attributes: [Attribute] = []
     public var tag: String = "link"
@@ -1034,34 +518,6 @@ public struct Tags {
   public struct Meta: Node, NodeConvertible, SelfClosingTag {
     public var attributes: [Attribute] = []
     public var tag: String = "meta"
-
-    public init() {}
-  }
-
-  public struct Param: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "param"
-
-    public init() {}
-  }
-
-  public struct Source: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "source"
-
-    public init() {}
-  }
-
-  public struct Track: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "track"
-
-    public init() {}
-  }
-
-  public struct Wbr: Node, NodeConvertible, SelfClosingTag {
-    public var attributes: [Attribute] = []
-    public var tag: String = "wbr"
 
     public init() {}
   }
