@@ -29,41 +29,46 @@ The list of supported tags and their attributes will be:
 * [x] script
 * [x] body
 * [x] div
-* [ ] table
-* [ ] thead
-* [ ] tbody
-* [ ] tr
-* [ ] td
-* [ ] th
-* [ ] ul
-* [ ] li
-* [ ] ol
-* [ ] dl
-* [ ] dt
-* [ ] dd
-* [ ] strong
-* [ ] em
-* [ ] i
-* [ ] b
-* [ ] br
-* [ ] h1
-* [ ] h2
-* [ ] h3
-* [ ] h4
-* [ ] h5
-* [ ] h6
-* [ ] nav
-* [ ] img
+* [x] table
+* [x] thead
+* [x] tbody
+* [x] tr
+* [x] td
+* [x] th
+* [x] tfoot
+* [x] ul
+* [x] li
+* [x] ol
+* [x] dl
+* [x] dt
+* [x] dd
+* [x] strong
+* [x] em
+* [x] i
+* [x] b
+* [x] br
+* [x] h1
+* [x] h2
+* [x] h3
+* [x] h4
+* [x] h5
+* [x] h6
+* [x] nav
+* [x] img
 * [x] a
-* [ ] article
-* [ ] header
-* [ ] footer
-* [ ] form
-* [ ] fieldset
-* [ ] legend
-* [ ] input
+* [x] article
+* [x] header
+* [x] footer
+* [x] section
+* [x] hgroup
+* [x] form
+* [x] fieldset
+* [x] legend
+* [x] label
+* [x] input
 * [ ] select
 * [ ] option
+* [ ] optgroup
 * [ ] textarea
 * [ ] pre
 * [ ] code
