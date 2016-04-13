@@ -7,6 +7,21 @@ extension Attributes {
     }
   }
 
+  public struct AutoCapitalize: Attribute {
+    public enum  Value: String {
+      case None = "none"
+      case Sentences = "sentences"
+      case Words = "words"
+      case Characters = "characters"
+    }
+
+    public let label = "AutoCapitalize"
+    public let stringValue: String
+    public init(_ value: Value) {
+      self.stringValue = value.rawValue
+    }
+  }
+
   public struct AutoComplete: Attribute {
     public enum  Value: String {
       case Off = "off"
@@ -108,6 +123,14 @@ extension Attributes {
     }
   }
 
+  public struct Cite: Attribute {
+    public let label = "cite"
+    public let stringValue: String
+    public init(_ value: String) {
+      self.stringValue = value
+    }
+  }
+
   public struct CrossOrigin: Attribute {
     public enum Value: String {
       case Anonymous = "anonymous"
@@ -118,6 +141,16 @@ extension Attributes {
     public let stringValue: String
     public init(_ value: Value) {
       self.stringValue = value.rawValue
+    }
+  }
+
+  public struct Cols: Attribute {
+    public let label = "cols"
+    public let value: Int
+    public let stringValue: String
+    public init(_ value: Int) {
+      self.value = value
+      self.stringValue = String(value)
     }
   }
 
@@ -316,6 +349,14 @@ extension Attributes {
     }
   }
 
+  public struct Label: Attribute {
+    public let label = "label"
+    public let stringValue: String
+    public init(_ value: String) {
+      self.stringValue = value
+    }
+  }
+
   public struct Max: Attribute {
     public let label = "max"
     public let stringValue: String
@@ -460,6 +501,16 @@ extension Attributes {
     public let stringValue = "reversed"
   }
 
+  public struct Rows: Attribute {
+    public let label = "rows"
+    public let value: Int
+    public let stringValue: String
+    public init(_ value: Int) {
+      self.value = value
+      self.stringValue = String(value)
+    }
+  }
+
   public struct Rowspan: Attribute {
     public let label = "rowspan"
     public let value: Int
@@ -494,6 +545,11 @@ extension Attributes {
     }
   }
 
+  public struct Selected: Attribute, BooleanAttribute {
+    public let label = "selected"
+    public let stringValue = "selected"
+  }
+
   public struct SelectionDirection: Attribute {
     public enum Value: String {
       case Forward = "forward"
@@ -505,6 +561,26 @@ extension Attributes {
     public let stringValue: String
     public init(_ value: Value) {
       self.stringValue = value.rawValue
+    }
+  }
+
+  public struct SelectionEnd: Attribute {
+    public let label = "selectionEnd"
+    public let value: Int
+    public let stringValue: String
+    public init(_ value: Int) {
+      self.value = value
+      self.stringValue = String(value)
+    }
+  }
+
+  public struct SelectionStart: Attribute {
+    public let label = "selectionStart"
+    public let value: Int
+    public let stringValue: String
+    public init(_ value: Int) {
+      self.value = value
+      self.stringValue = String(value)
     }
   }
 
@@ -633,6 +709,19 @@ extension Attributes {
     public init(_ value: Int) {
       self.value = value
       self.stringValue = String(value)
+    }
+  }
+
+  public struct Wrap: Attribute {
+    public enum Value: String {
+      case Hard = "hard"
+      case Soft = "soft"
+    }
+
+    public let label = "wrap"
+    public let stringValue: String
+    init(_ value: Value) {
+      self.stringValue = value.rawValue
     }
   }
 

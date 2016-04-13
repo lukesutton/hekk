@@ -66,17 +66,17 @@ The list of supported tags and their attributes will be:
 * [x] legend
 * [x] label
 * [x] input
-* [ ] select
-* [ ] option
-* [ ] optgroup
-* [ ] textarea
-* [ ] pre
-* [ ] code
-* [ ] main
-* [ ] style
-* [ ] span
-* [ ] blockquote
-* [ ] button
+* [x] select
+* [x] option
+* [x] optgroup
+* [x] textarea
+* [x] pre
+* [x] code
+* [x] main
+* [x] style
+* [x] span
+* [x] blockquote
+* [x] button
 
 ## Unlikely to be supported
 
