@@ -164,6 +164,14 @@ extension Attributes {
     }
   }
 
+  public struct ContentType: Attribute {
+    public let label = "type"
+    public let stringValue: String
+    public init(_ value: String) {
+      self.stringValue = value
+    }
+  }
+
   public struct Disabled: Attribute, BooleanAttribute {
     public let label = "disabled"
     public let stringValue = "disabled"
@@ -398,14 +406,14 @@ extension Attributes {
   }
 
   public struct Method: Attribute {
-    public enum MethodValue {
+    public enum Value {
       case GET
       case POST
     }
 
     public let label = "method"
     public var stringValue: String
-    public init(_ value: MethodValue) {
+    public init(_ value: Value) {
       self.stringValue = String(value)
     }
   }
@@ -482,6 +490,10 @@ extension Attributes {
     public let stringValue: String
     public init(_ values: Value...) {
       self.stringValue = values.map {$0.rawValue}.joinWithSeparator(" ")
+    }
+
+    public init(_ value: Value) {
+      self.stringValue = value.rawValue
     }
   }
 

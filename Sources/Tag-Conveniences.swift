@@ -9,3 +9,25 @@ extension Tags.Input {
     return Tags.Input(attributes)
   }
 }
+
+extension Tags.Form {
+  public init(action: String, method: Attributes.Method.Value, attributes: [Attribute], _ children: NodeConvertible...) {
+    let defaults: [Attribute] = [
+      Attributes.Action(action),
+      Attributes.Method(method),
+      Attributes.AcceptCharset("UTF-8")
+    ]
+
+    self.init(defaults + attributes, children)
+  }
+
+  public init(action: String, method: Attributes.Method.Value, _ children: NodeConvertible...) {
+    let defaults: [Attribute] = [
+      Attributes.Action(action),
+      Attributes.Method(method),
+      Attributes.AcceptCharset("UTF-8")
+    ]
+
+    self.init(defaults, children)
+  }
+}
