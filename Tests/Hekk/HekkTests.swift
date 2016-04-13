@@ -81,6 +81,26 @@ class HekkTests: XCTestCase {
 
     XCTAssertEqual(HTML5Compiler.compile(div), test)
   }
+
+  func testNothing() {
+    func tag(node: NodeConvertible) -> NodeConvertible {
+      return T.Div(node)
+    }
+
+    let first = String.multiline(
+      "<div>",
+      "</div>"
+    )
+
+    let second = String.multiline(
+      "<div>",
+      "  <br>",
+      "</div>"
+    )
+
+    XCTAssertEqual(HTML5Compiler.compile(tag(Nothing())), first)
+    XCTAssertEqual(HTML5Compiler.compile(tag(T.Br())), second)
+  }
 }
 
 extension String {

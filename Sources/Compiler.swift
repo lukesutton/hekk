@@ -39,6 +39,8 @@ public struct Compiler {
         return [indent + node.value]
       case let node as Fragment:
         return node.children.flatMap {compileNode($0.node, forSpec: spec, indentLevel: indentLevel)}
+      case is Nothing:
+        return []
       default:
         return []
     }
