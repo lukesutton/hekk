@@ -44,20 +44,21 @@ class HekkTests: XCTestCase {
   }
 
   func testForm() {
-    let tag = T.Form(action: "/users", method: .POST,
+
+    let tag = T.Form(A.Action("what") + A.Method(.POST),
       T.Fieldset(
         T.Legend("Login"),
         T.Label([A.For("name")],
           T.Span("Name"),
-          T.Input([A.InputType(.Text), A.Name("name")])
+          T.Input.text("name")
         ),
         T.Label([A.For("password")],
           T.Span("Password"),
-          T.Input([A.InputType(.Password), A.Name("password")])
+          T.Input.password("password")
         ),
         T.Label([A.For("confirm-password")],
           T.Span("Confirm Password"),
-          T.Input([A.InputType(.Password), A.Name("confirm-password")])
+          T.Input.password("confirm-password")
         )
       )
     )
