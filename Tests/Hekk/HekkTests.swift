@@ -64,6 +64,23 @@ class HekkTests: XCTestCase {
 
     print(HTML5Compiler.compile(tag))
   }
+
+  func testFragment() {
+    let fragment = Fragment(T.P("Now"), T.P("Here"))
+    let div = T.Div(fragment)
+    let test = String.multiline(
+      "<div>",
+      "  <p>",
+      "    Now",
+      "  </p>",
+      "  <p>",
+      "    Here",
+      "  </p>",
+      "</div>"
+    )
+
+    XCTAssertEqual(HTML5Compiler.compile(div), test)
+  }
 }
 
 extension String {
