@@ -2,6 +2,26 @@
 
 Can you write HTML using pure Swift? Maybe? Let's find out! A companion project to [Uut](https://github.com/lukesutton/uut).
 
+## A bit of a taste
+
+```swift
+import Hekk
+typealias a = Attributes
+
+let layout = div([a.id("main"), a.dropzone(.Copy)],
+  div([a.classname("left")],
+    h2("Word Up"),
+    p("you can add some stuff and be", strong("very"), "happy!")
+  ),
+  div([a.classname("right")],
+    h2("Word Down"),
+    p("Well now?")
+  )
+)
+```
+
+It's a DSL embedded directly in Swift. Nothing fancy, just vanilla functions and structs. This brings the full power of Swift to generating and manipulating HTML.
+
 ## Please Note
 
 * I don't know what I'm doing
