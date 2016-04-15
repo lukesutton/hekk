@@ -43,7 +43,8 @@ public struct Compiler {
   }
 
   private func compileAttributes(attributes: Set<Attribute>, forSpec spec: Spec) -> String {
-    return attributes.map { attr in
+    let sorted = attributes.sort {$0.name < $1.name}
+    return sorted.map { attr in
       if spec == .HTML5 && attr.isBoolean == true {
         return attr.name
       }

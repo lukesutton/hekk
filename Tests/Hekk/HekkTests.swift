@@ -7,7 +7,7 @@ class HekkTests: XCTestCase {
   typealias a = Attributes
 
   func testSimple() {
-    let layout = div([a.id("what")],
+    let layout = div([a.id("what"), a.dropzone(.Copy), a.draggable(false)],
       p("Ok now"),
       p("Well", strong("yes"), "what?")
     )
