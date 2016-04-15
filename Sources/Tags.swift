@@ -6,6 +6,8 @@ public func document(head: Node, _ body: Node) -> Document {
   return Document([], head, body)
 }
 
+public let empty = Empty()
+
 public func form(attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.form, attributes, children)
 }

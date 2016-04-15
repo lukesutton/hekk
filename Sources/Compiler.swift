@@ -48,6 +48,9 @@ public struct Compiler {
         else {
           return ["\(indent)<\(node.name) \(attrs)\(spec != .HTML5 ? " /" : "")>"]
         }
+
+      case is Empty:
+        return []
       default:
         return []
     }
