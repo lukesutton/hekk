@@ -10,49 +10,45 @@ public struct Compiler {
     self.spec = spec
   }
 
-  public func compile(node: NodeConvertible) -> String {
-    return compileNode(node.node, forSpec: spec).joinWithSeparator("\r\n")
+  public func compile(node: Node) -> String {
+    return compileNode(node, forSpec: spec).joinWithSeparator("\r\n")
   }
 
   func compileNode(node: Node, forSpec spec: Spec, indentLevel: Int = 0) -> [String] {
     let indent = String(count: indentLevel * 2, repeatedValue: Character(" "))
 
     switch node {
-      case let node as SelfClosingTag:
+      case let node as LiteralNode:
+        return [indent + node.stringValue]
+      case let node as Tag:
         let attrs =  compileAttributes(node.attributes, forSpec: spec)
+        let children = node.children.flatMap {compileNode($0, forSpec: spec, indentLevel: indentLevel + 1)}
         if attrs.isEmpty {
-          return ["\(indent)<\(node.tag)\(spec != .HTML5 ? "/" : "")>"]
+          return ["\(indent)<\(node.name)>"] + children + ["\(indent)</\(node.name)>"]
         }
         else {
-          return ["\(indent)<\(node.tag) \(attrs)\(spec != .HTML5 ? " /" : "")>"]
+          return ["\(indent)<\(node.name) \(attrs)>"] + children + ["\(indent)</\(node.name)>"]
         }
-      case let node as TagWithChildren:
+      case let node as TagSelfClosing:
         let attrs =  compileAttributes(node.attributes, forSpec: spec)
-        let children = node.children.flatMap {compileNode($0.node, forSpec: spec, indentLevel: indentLevel + 1)}
         if attrs.isEmpty {
-          return ["\(indent)<\(node.tag)>"] + children + ["\(indent)</\(node.tag)>"]
+          return ["\(indent)<\(node.name)\(spec != .HTML5 ? "/" : "")>"]
         }
         else {
-          return ["\(indent)<\(node.tag) \(attrs)>"] + children + ["\(indent)</\(node.tag)>"]
+          return ["\(indent)<\(node.name) \(attrs)\(spec != .HTML5 ? " /" : "")>"]
         }
-      case let node as Text:
-        return [indent + node.value]
-      case let node as Fragment:
-        return node.children.flatMap {compileNode($0.node, forSpec: spec, indentLevel: indentLevel)}
-      case is Nothing:
-        return []
       default:
         return []
     }
   }
 
-  private func compileAttributes(attributes: [Attribute], forSpec spec: Spec) -> String {
+  private func compileAttributes(attributes: Set<Attribute>, forSpec spec: Spec) -> String {
     return attributes.map { attr in
-      if spec == .HTML5 && attr is BooleanAttribute {
-        return attr.label
+      if spec == .HTML5 && attr.isBoolean == true {
+        return attr.name
       }
       else  {
-        return "\(attr.label)=\"\(attr.stringValue)\""
+        return "\(attr.name)=\"\(attr.value.stringValue)\""
       }
 
     }.joinWithSeparator(" ")

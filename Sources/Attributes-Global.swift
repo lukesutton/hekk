@@ -1,102 +1,58 @@
+extension AttributeNames {
+  public static let accesskey = "accesskey"
+  public static let classname = "class"
+  public static let contenteditable = "contenteditable"
+  public static let contextmenu = "contextmenu"
+  public static let dir = "dir"
+  public static let draggable = "draggable"
+  public static let data = "data"
+  public static let dropzone = "dropzone"
+  public static let hidden = "hidden"
+  public static let id = "id"
+  public static let title = "title"
+}
+
 extension Attributes {
-  public struct AccessKey: Attribute {
-    public let label = "accesskey"
-    public let stringValue: String
-    public init(_ value: String) {
-      self.stringValue = value
-    }
-  }
-
-  public struct Class: Attribute {
-    public let label = "class"
-    public let stringValue: String
-    public init(_ value: String) {
-      self.stringValue = value
-    }
-  }
-
-  public struct ContentEditable: Attribute {
-    public let label = "contenteditable"
-    public let stringValue: String
-    public init(_ value: Bool) {
-      self.stringValue = value ? "true" : "false"
-    }
-  }
-
-  public struct ContextMenu: Attribute {
-    public let label = "contextmenu"
-    public let stringValue: String
-    public init(_ value: String) {
-      self.stringValue = value
-    }
-  }
-
-  public struct Dir: Attribute {
-    public enum Value: String {
-      case LeftToRight = "ltr"
-      case RightToLeft = "rtl"
-      case Auto = "auto"
-    }
-
-    public let label = "dir"
-    public let stringValue: String
-    public init(_ value: Value) {
-      self.stringValue = value.rawValue
-    }
-  }
-
-  public struct Draggable: Attribute {
-    public let label = "draggable"
-    public let stringValue: String
-    public init(_ value: Bool) {
-      self.stringValue = value ? "true" : "false"
-    }
-  }
-
-  public struct Data: Attribute {
+  public struct DataAttributeValue: AttributeValue {
     public let label: String
-    public let stringValue: String
-    public init(_ label: String, _ value: String) {
-      self.label = "data-\(label)"
-      self.stringValue = value
+    public let value: LiteralNode
+
+    public var stringValue: String {
+      return value.stringValue
     }
   }
 
-  public struct Dropzone: Attribute {
-    public enum Value: String {
-      case Copy = "copy"
-      case Move = "move"
-      case Link = "link"
-    }
+  public enum DirValue: String, AttributeValue {
+    case LeftToRight = "ltr"
+    case RightToLeft = "rtl"
+    case Auto = "auto"
 
-    public let label = "dropzone"
-    public let stringValue: String
-    public init(_ value: Value) {
-      self.stringValue = value.rawValue
+    public var stringValue: String {
+      return rawValue
     }
   }
 
-  public struct Hidden: Attribute {
-    public let label = "hidden"
-    public let stringValue: String
-    public init(_ value: Bool) {
-      self.stringValue = value ? "true" : "false"
+  public enum DropzoneValue: String, AttributeValue {
+    case Copy = "copy"
+    case Move = "move"
+    case Link = "link"
+
+    public var stringValue: String {
+      return rawValue
     }
   }
 
-  public struct ID: Attribute {
-    public let label = "id"
-    public let stringValue: String
-    public init(_ value: String) {
-      self.stringValue = value
-    }
+  public static let accesskey = defineAttr(AttributeNames.accesskey, type: String.self)
+  public static let classname = defineAttr(AttributeNames.classname, type: String.self)
+  public static let contenteditable = defineAttr(AttributeNames.contenteditable, type: Bool.self)
+  public static let contextmenu = defineAttr(AttributeNames.contextmenu, type: String.self)
+  public static let dir = defineAttr(AttributeNames.dir, type: DirValue.self)
+  public static let draggable = defineAttr(AttributeNames.draggable, type: Bool.self)
+  public static func data(label: String, value: LiteralNode) -> Attribute {
+    return Attribute(AttributeNames.draggable, DataAttributeValue(label: label, value: value))
   }
-
-  public struct Title: Attribute {
-    public let label = "title"
-    public let stringValue: String
-    public init(_ value: String) {
-      self.stringValue = value
-    }
-  }
+  public static let dropzone = defineAttr(AttributeNames.dropzone, type: DropzoneValue.self)
+  public static let hidden = defineAttr(AttributeNames.hidden, type: Bool.self)
+  public static let id = defineAttr(AttributeNames.id, type: String.self)
+  public static let title = defineAttr(AttributeNames.title, type: String.self)
 }
