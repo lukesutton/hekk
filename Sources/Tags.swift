@@ -1,3 +1,11 @@
+public func document(attributes: [Attribute], _ head: Node, _ body: Node) -> Document {
+  return Document(attributes, head, body)
+}
+
+public func document(head: Node, _ body: Node) -> Document {
+  return Document([], head, body)
+}
+
 public func form(attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.form, attributes, children)
 }
@@ -52,8 +60,12 @@ public func html(children: Node...) -> Node {
   return Tag(TagNames.html, [], children)
 }
 
-public func title(attributes: [Attribute]) -> Node {
-  return TagSelfClosing(TagNames.title, attributes)
+public func title(attributes: [Attribute], _ children: Node...) -> Node {
+  return Tag(TagNames.title, attributes, children)
+}
+
+public func title(children: Node...) -> Node {
+  return Tag(TagNames.title, [], children)
 }
 
 public func head(attributes: [Attribute], _ children: Node...) -> Node {

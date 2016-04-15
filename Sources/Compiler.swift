@@ -10,6 +10,17 @@ public struct Compiler {
     self.spec = spec
   }
 
+  public func compile(document: Document) -> String {
+    switch spec {
+      case .HTML5:
+        let doctype = "<!DOCTYPE html>\r\n"
+        return doctype + compile(document.root)
+      case .XHTML:
+        // TODO: Inject the xmlns attribute and encoding etc
+        return compile(document.root)
+    }
+  }
+
   public func compile(node: Node) -> String {
     return compileNode(node, forSpec: spec).joinWithSeparator("\r\n")
   }
