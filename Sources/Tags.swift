@@ -279,11 +279,11 @@ public func nav(children: Node...) -> Node {
 }
 
 public func img(attributes: [Attribute], _ children: Node...) -> Node {
-  return Tag(TagNames.img, attributes, children)
+  return TagSelfClosing(TagNames.img, attributes)
 }
 
-public func img(children: Node...) -> Node {
-  return Tag(TagNames.img, [], children)
+public func img(attributes: Attribute...) -> Node {
+  return TagSelfClosing(TagNames.img, attributes)
 }
 
 public func a(attributes: [Attribute], _ children: Node...) -> Node {
