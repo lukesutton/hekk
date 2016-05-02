@@ -48,7 +48,8 @@ public struct Compiler {
         else {
           return ["\(indent)<\(node.name) \(attrs)\(spec != .HTML5 ? " /" : "")>"]
         }
-
+      case let node as Fragment:
+        return node.nodes.flatMap {compileNode($0, forSpec: spec)}
       case is Empty:
         return []
       default:
