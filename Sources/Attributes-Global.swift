@@ -42,17 +42,47 @@ extension Attributes {
     }
   }
 
-  public static let accesskey = defineAttr(AttributeNames.accesskey, type: String.self)
-  public static let classname = defineAttr(AttributeNames.classname, type: String.self)
-  public static let contenteditable = defineAttr(AttributeNames.contenteditable, type: Bool.self)
-  public static let contextmenu = defineAttr(AttributeNames.contextmenu, type: String.self)
-  public static let dir = defineAttr(AttributeNames.dir, type: DirValue.self)
-  public static let draggable = defineAttr(AttributeNames.draggable, type: Bool.self)
+  public static func accesskey(value: String) -> Attribute {
+    return Attribute(AttributeNames.accesskey, value)
+  }
+
+  public static func classname(value: String) -> Attribute {
+    return Attribute(AttributeNames.classname, value)
+  }
+
+  public static func contenteditable(value: Bool) -> Attribute {
+    return Attribute(AttributeNames.contenteditable, value)
+  }
+
+  public static func contextmenu(value: String) -> Attribute {
+    return Attribute(AttributeNames.contextmenu, value)
+  }
+
+  public static func dir(value: DirValue) -> Attribute {
+    return Attribute(AttributeNames.dir, value)
+  }
+
+  public static func draggable(value: Bool) -> Attribute {
+    return Attribute(AttributeNames.draggable, value)
+  }
+
   public static func data(label: String, value: LiteralNode) -> Attribute {
     return Attribute(AttributeNames.draggable, DataAttributeValue(label: label, value: value))
   }
-  public static let dropzone = defineAttr(AttributeNames.dropzone, type: DropzoneValue.self)
-  public static let hidden = defineAttr(AttributeNames.hidden, type: Bool.self)
-  public static let id = defineAttr(AttributeNames.id, type: String.self)
-  public static let title = defineAttr(AttributeNames.title, type: String.self)
+
+  public static func dropzone(value: DropzoneValue) -> Attribute {
+    return Attribute(AttributeNames.dropzone, value)
+  }
+
+  public static func hidden(value: Bool) -> Attribute {
+    return Attribute(AttributeNames.hidden, value)
+  }
+
+  public static func id(value: String) -> Attribute {
+    return Attribute(AttributeNames.id, value)
+  }
+
+  public static func title(value: String) -> Attribute {
+    return Attribute(AttributeNames.title, value)
+  }
 }
