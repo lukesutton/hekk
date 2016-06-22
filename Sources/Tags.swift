@@ -1,451 +1,451 @@
-public func document(attributes: [Attribute], _ head: Node, _ body: Node) -> Document {
+public func document(_ attributes: [Attribute], _ head: Node, _ body: Node) -> Document {
   return Document(attributes, head, body)
 }
 
-public func document(head: Node, _ body: Node) -> Document {
+public func document(_ head: Node, _ body: Node) -> Document {
   return Document([], head, body)
 }
 
 public let empty = Empty()
 
-public func form(attributes: [Attribute], _ children: Node...) -> Node {
+public func form(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.form, attributes, children)
 }
 
-public func form(children: Node...) -> Node {
+public func form(_ children: Node...) -> Node {
   return Tag(TagNames.form, [], children)
 }
 
-public func div(attributes: [Attribute], _ children: Node...) -> Node {
+public func div(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.div, attributes, children)
 }
 
-public func div(children: Node...) -> Node {
+public func div(_ children: Node...) -> Node {
   return Tag(TagNames.div, [], children)
 }
 
-public func p(attributes: [Attribute], _ children: Node...) -> Node {
+public func p(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.p, attributes, children)
 }
 
-public func p(children: Node...) -> Node {
+public func p(_ children: Node...) -> Node {
   return Tag(TagNames.p, [], children)
 }
 
-public func strong(attributes: [Attribute], _ children: Node...) -> Node {
+public func strong(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.strong, attributes, children)
 }
 
-public func strong(children: Node...) -> Node {
+public func strong(_ children: Node...) -> Node {
   return Tag(TagNames.strong, [], children)
 }
 
-public func em(attributes: [Attribute], _ children: Node...) -> Node {
+public func em(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.em, attributes, children)
 }
 
-public func em(children: Node...) -> Node {
+public func em(_ children: Node...) -> Node {
   return Tag(TagNames.em, [], children)
 }
 
-public func br(attributes: [Attribute]) -> Node {
+public func br(_ attributes: [Attribute]) -> Node {
   return TagSelfClosing(TagNames.br, attributes)
 }
 
 public let br = TagSelfClosing(TagNames.br, [])
 
-public func html(attributes: [Attribute], _ children: Node...) -> Node {
+public func html(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.html, attributes, children)
 }
 
-public func html(children: Node...) -> Node {
+public func html(_ children: Node...) -> Node {
   return Tag(TagNames.html, [], children)
 }
 
-public func title(attributes: [Attribute], _ children: Node...) -> Node {
+public func title(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.title, attributes, children)
 }
 
-public func title(children: Node...) -> Node {
+public func title(_ children: Node...) -> Node {
   return Tag(TagNames.title, [], children)
 }
 
-public func head(attributes: [Attribute], _ children: Node...) -> Node {
+public func head(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.head, attributes, children)
 }
 
-public func head(children: Node...) -> Node {
+public func head(_ children: Node...) -> Node {
   return Tag(TagNames.head, [], children)
 }
 
-public func meta(attributes: [Attribute]) -> Node {
+public func meta(_ attributes: [Attribute]) -> Node {
   return TagSelfClosing(TagNames.meta, attributes)
 }
 
-public func link(attributes: [Attribute]) -> Node {
+public func link(_ attributes: [Attribute]) -> Node {
   return TagSelfClosing(TagNames.link, attributes)
 }
 
-public func script(attributes: [Attribute], _ children: Node...) -> Node {
+public func script(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.script, attributes, children)
 }
 
-public func script(children: Node...) -> Node {
+public func script(_ children: Node...) -> Node {
   return Tag(TagNames.script, [], children)
 }
 
-public func body(children: Node...) -> Node {
+public func body(_ children: Node...) -> Node {
   return Tag(TagNames.body, [], children)
 }
 
-public func body(attributes: [Attribute], _ children: Node...) -> Node {
+public func body(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.body, attributes, children)
 }
 
-public func table(attributes: [Attribute], _ children: Node...) -> Node {
+public func table(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.table, attributes, children)
 }
 
-public func table(children: Node...) -> Node {
+public func table(_ children: Node...) -> Node {
   return Tag(TagNames.table, [], children)
 }
 
-public func thead(attributes: [Attribute], _ children: Node...) -> Node {
+public func thead(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.thead, attributes, children)
 }
 
-public func thead(children: Node...) -> Node {
+public func thead(_ children: Node...) -> Node {
   return Tag(TagNames.thead, [], children)
 }
 
-public func tbody(attributes: [Attribute], _ children: Node...) -> Node {
+public func tbody(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.tbody, attributes, children)
 }
 
-public func tbody(children: Node...) -> Node {
+public func tbody(_ children: Node...) -> Node {
   return Tag(TagNames.tbody, [], children)
 }
 
-public func tr(attributes: [Attribute], _ children: Node...) -> Node {
+public func tr(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.tr, attributes, children)
 }
 
-public func tr(children: Node...) -> Node {
+public func tr(_ children: Node...) -> Node {
   return Tag(TagNames.tr, [], children)
 }
 
-public func td(attributes: [Attribute], _ children: Node...) -> Node {
+public func td(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.td, attributes, children)
 }
 
-public func td(children: Node...) -> Node {
+public func td(_ children: Node...) -> Node {
   return Tag(TagNames.td, [], children)
 }
 
-public func th(attributes: [Attribute], _ children: Node...) -> Node {
+public func th(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.th, attributes, children)
 }
 
-public func th(children: Node...) -> Node {
+public func th(_ children: Node...) -> Node {
   return Tag(TagNames.th, [], children)
 }
 
-public func tfoot(attributes: [Attribute], _ children: Node...) -> Node {
+public func tfoot(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.tfoot, attributes, children)
 }
 
-public func tfoot(children: Node...) -> Node {
+public func tfoot(_ children: Node...) -> Node {
   return Tag(TagNames.tfoot, [], children)
 }
 
-public func ul(attributes: [Attribute], _ children: Node...) -> Node {
+public func ul(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.ul, attributes, children)
 }
 
-public func ul(children: Node...) -> Node {
+public func ul(_ children: Node...) -> Node {
   return Tag(TagNames.ul, [], children)
 }
 
-public func ol(attributes: [Attribute], _ children: Node...) -> Node {
+public func ol(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.ol, attributes, children)
 }
 
-public func ol(children: Node...) -> Node {
+public func ol(_ children: Node...) -> Node {
   return Tag(TagNames.ol, [], children)
 }
 
-public func li(attributes: [Attribute], _ children: Node...) -> Node {
+public func li(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.li, attributes, children)
 }
 
-public func li(children: Node...) -> Node {
+public func li(_ children: Node...) -> Node {
   return Tag(TagNames.li, [], children)
 }
 
-public func dl(attributes: [Attribute], _ children: Node...) -> Node {
+public func dl(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.dl, attributes, children)
 }
 
-public func dl(children: Node...) -> Node {
+public func dl(_ children: Node...) -> Node {
   return Tag(TagNames.dl, [], children)
 }
 
-public func dd(attributes: [Attribute], _ children: Node...) -> Node {
+public func dd(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.dd, attributes, children)
 }
 
-public func dd(children: Node...) -> Node {
+public func dd(_ children: Node...) -> Node {
   return Tag(TagNames.dd, [], children)
 }
 
-public func dt(attributes: [Attribute], _ children: Node...) -> Node {
+public func dt(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.dt, attributes, children)
 }
 
-public func dt(children: Node...) -> Node {
+public func dt(_ children: Node...) -> Node {
   return Tag(TagNames.dt, [], children)
 }
 
-public func i(attributes: [Attribute], _ children: Node...) -> Node {
+public func i(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.i, attributes, children)
 }
 
-public func i(children: Node...) -> Node {
+public func i(_ children: Node...) -> Node {
   return Tag(TagNames.i, [], children)
 }
 
-public func b(attributes: [Attribute], _ children: Node...) -> Node {
+public func b(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.b, attributes, children)
 }
 
-public func b(children: Node...) -> Node {
+public func b(_ children: Node...) -> Node {
   return Tag(TagNames.b, [], children)
 }
 
-public func h1(attributes: [Attribute], _ children: Node...) -> Node {
+public func h1(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.h1, attributes, children)
 }
 
-public func h1(children: Node...) -> Node {
+public func h1(_ children: Node...) -> Node {
   return Tag(TagNames.h1, [], children)
 }
 
-public func h2(attributes: [Attribute], _ children: Node...) -> Node {
+public func h2(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.h2, attributes, children)
 }
 
-public func h2(children: Node...) -> Node {
+public func h2(_ children: Node...) -> Node {
   return Tag(TagNames.h2, [], children)
 }
 
-public func h3(attributes: [Attribute], _ children: Node...) -> Node {
+public func h3(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.h3, attributes, children)
 }
 
-public func h3(children: Node...) -> Node {
+public func h3(_ children: Node...) -> Node {
   return Tag(TagNames.h3, [], children)
 }
 
-public func h4(attributes: [Attribute], _ children: Node...) -> Node {
+public func h4(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.h4, attributes, children)
 }
 
-public func h4(children: Node...) -> Node {
+public func h4(_ children: Node...) -> Node {
   return Tag(TagNames.h4, [], children)
 }
 
-public func h5(attributes: [Attribute], _ children: Node...) -> Node {
+public func h5(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.h5, attributes, children)
 }
 
-public func h5(children: Node...) -> Node {
+public func h5(_ children: Node...) -> Node {
   return Tag(TagNames.h5, [], children)
 }
 
-public func h6(attributes: [Attribute], _ children: Node...) -> Node {
+public func h6(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.h6, attributes, children)
 }
 
-public func h6(children: Node...) -> Node {
+public func h6(_ children: Node...) -> Node {
   return Tag(TagNames.h6, [], children)
 }
 
-public func nav(attributes: [Attribute], _ children: Node...) -> Node {
+public func nav(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.nav, attributes, children)
 }
 
-public func nav(children: Node...) -> Node {
+public func nav(_ children: Node...) -> Node {
   return Tag(TagNames.nav, [], children)
 }
 
-public func img(attributes: [Attribute], _ children: Node...) -> Node {
+public func img(_ attributes: [Attribute], _ children: Node...) -> Node {
   return TagSelfClosing(TagNames.img, attributes)
 }
 
-public func img(attributes: Attribute...) -> Node {
+public func img(_ attributes: Attribute...) -> Node {
   return TagSelfClosing(TagNames.img, attributes)
 }
 
-public func a(attributes: [Attribute], _ children: Node...) -> Node {
+public func a(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.a, attributes, children)
 }
 
-public func a(children: Node...) -> Node {
+public func a(_ children: Node...) -> Node {
   return Tag(TagNames.a, [], children)
 }
 
-public func article(attributes: [Attribute], _ children: Node...) -> Node {
+public func article(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.article, attributes, children)
 }
 
-public func article(children: Node...) -> Node {
+public func article(_ children: Node...) -> Node {
   return Tag(TagNames.article, [], children)
 }
 
-public func header(attributes: [Attribute], _ children: Node...) -> Node {
+public func header(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.header, attributes, children)
 }
 
-public func header(children: Node...) -> Node {
+public func header(_ children: Node...) -> Node {
   return Tag(TagNames.header, [], children)
 }
 
-public func footer(attributes: [Attribute], _ children: Node...) -> Node {
+public func footer(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.footer, attributes, children)
 }
 
-public func footer(children: Node...) -> Node {
+public func footer(_ children: Node...) -> Node {
   return Tag(TagNames.footer, [], children)
 }
 
-public func section(attributes: [Attribute], _ children: Node...) -> Node {
+public func section(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.section, attributes, children)
 }
 
-public func section(children: Node...) -> Node {
+public func section(_ children: Node...) -> Node {
   return Tag(TagNames.section, [], children)
 }
 
-public func hgroup(attributes: [Attribute], _ children: Node...) -> Node {
+public func hgroup(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.hgroup, attributes, children)
 }
 
-public func hgroup(children: Node...) -> Node {
+public func hgroup(_ children: Node...) -> Node {
   return Tag(TagNames.hgroup, [], children)
 }
 
-public func fieldset(attributes: [Attribute], _ children: Node...) -> Node {
+public func fieldset(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.fieldset, attributes, children)
 }
 
-public func fieldset(children: Node...) -> Node {
+public func fieldset(_ children: Node...) -> Node {
   return Tag(TagNames.fieldset, [], children)
 }
 
-public func legend(attributes: [Attribute], _ children: Node...) -> Node {
+public func legend(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.legend, attributes, children)
 }
 
-public func legend(children: Node...) -> Node {
+public func legend(_ children: Node...) -> Node {
   return Tag(TagNames.legend, [], children)
 }
 
-public func label(attributes: [Attribute], _ children: Node...) -> Node {
+public func label(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.label, attributes, children)
 }
 
-public func label(children: Node...) -> Node {
+public func label(_ children: Node...) -> Node {
   return Tag(TagNames.label, [], children)
 }
 
-public func input(attributes: [Attribute]) -> Node {
+public func input(_ attributes: [Attribute]) -> Node {
   return TagSelfClosing(TagNames.input, attributes)
 }
 
-public func select(attributes: [Attribute], _ children: Node...) -> Node {
+public func select(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.select, attributes, children)
 }
 
-public func select(children: Node...) -> Node {
+public func select(_ children: Node...) -> Node {
   return Tag(TagNames.select, [], children)
 }
 
-public func option(attributes: [Attribute], _ children: Node...) -> Node {
+public func option(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.option, attributes, children)
 }
 
-public func option(children: Node...) -> Node {
+public func option(_ children: Node...) -> Node {
   return Tag(TagNames.option, [], children)
 }
 
-public func optgroup(attributes: [Attribute], _ children: Node...) -> Node {
+public func optgroup(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.optgroup, attributes, children)
 }
 
-public func optgroup(children: Node...) -> Node {
+public func optgroup(_ children: Node...) -> Node {
   return Tag(TagNames.optgroup, [], children)
 }
 
-public func textarea(attributes: [Attribute], _ children: Node...) -> Node {
+public func textarea(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.textarea, attributes, children)
 }
 
-public func textarea(children: Node...) -> Node {
+public func textarea(_ children: Node...) -> Node {
   return Tag(TagNames.textarea, [], children)
 }
 
-public func pre(attributes: [Attribute], _ children: Node...) -> Node {
+public func pre(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.pre, attributes, children)
 }
 
-public func pre(children: Node...) -> Node {
+public func pre(_ children: Node...) -> Node {
   return Tag(TagNames.pre, [], children)
 }
 
-public func code(attributes: [Attribute], _ children: Node...) -> Node {
+public func code(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.code, attributes, children)
 }
 
-public func code(children: Node...) -> Node {
+public func code(_ children: Node...) -> Node {
   return Tag(TagNames.code, [], children)
 }
 
-public func main(attributes: [Attribute], _ children: Node...) -> Node {
+public func main(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.main, attributes, children)
 }
 
-public func main(children: Node...) -> Node {
+public func main(_ children: Node...) -> Node {
   return Tag(TagNames.main, [], children)
 }
 
-public func style(attributes: [Attribute], _ children: Node...) -> Node {
+public func style(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.style, attributes, children)
 }
 
-public func style(children: Node...) -> Node {
+public func style(_ children: Node...) -> Node {
   return Tag(TagNames.style, [], children)
 }
 
-public func span(attributes: [Attribute], _ children: Node...) -> Node {
+public func span(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.span, attributes, children)
 }
 
-public func span(children: Node...) -> Node {
+public func span(_ children: Node...) -> Node {
   return Tag(TagNames.span, [], children)
 }
 
-public func blockquote(attributes: [Attribute], _ children: Node...) -> Node {
+public func blockquote(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.blockquote, attributes, children)
 }
 
-public func button(children: Node...) -> Node {
+public func button(_ children: Node...) -> Node {
   return Tag(TagNames.button, [], children)
 }
 
-public func button(attributes: [Attribute], _ children: Node...) -> Node {
+public func button(_ attributes: [Attribute], _ children: Node...) -> Node {
   return Tag(TagNames.button, attributes, children)
 }
 
-public func blockquote(children: Node...) -> Node {
+public func blockquote(_ children: Node...) -> Node {
   return Tag(TagNames.blockquote, [], children)
 }

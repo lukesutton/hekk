@@ -10,7 +10,7 @@ public struct Compiler {
     self.spec = spec
   }
 
-  public func compile(document: Document) -> String {
+  public func compile(_ document: Document) -> String {
     switch spec {
       case .HTML5:
         let doctype = "<!DOCTYPE html>\r\n"
@@ -21,12 +21,12 @@ public struct Compiler {
     }
   }
 
-  public func compile(node: Node) -> String {
-    return compileNode(node, forSpec: spec).joinWithSeparator("\r\n")
+  public func compile(_ node: Node) -> String {
+    return compileNode(node, forSpec: spec).joined(separator: "\r\n")
   }
 
-  func compileNode(node: Node, forSpec spec: Spec, indentLevel: Int = 0) -> [String] {
-    let indent = String(count: indentLevel * 2, repeatedValue: Character(" "))
+  func compileNode(_ node: Node, forSpec spec: Spec, indentLevel: Int = 0) -> [String] {
+    let indent = String(repeated: Character(" "), count: indentLevel * 2)
 
     switch node {
       case let node as LiteralNode:
@@ -57,8 +57,8 @@ public struct Compiler {
     }
   }
 
-  private func compileAttributes(attributes: Set<Attribute>, forSpec spec: Spec) -> String {
-    let sorted = attributes.sort {$0.name < $1.name}
+  private func compileAttributes(_ attributes: Set<Attribute>, forSpec spec: Spec) -> String {
+    let sorted = attributes.sorted {$0.name < $1.name}
     return sorted.map { attr in
       if spec == .HTML5 && attr.isBoolean == true {
         return attr.name
@@ -67,6 +67,6 @@ public struct Compiler {
         return "\(attr.name)=\"\(attr.value.stringValue)\""
       }
 
-    }.joinWithSeparator(" ")
+    }.joined(separator: " ")
   }
 }

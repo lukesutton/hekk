@@ -42,27 +42,27 @@ extension Attributes {
     }
   }
 
-  public static func accesskey(value: String) -> Attribute {
+  public static func accesskey(_ value: String) -> Attribute {
     return Attribute(AttributeNames.accesskey, value)
   }
 
-  public static func classname(value: String) -> Attribute {
+  public static func classname(_ value: String) -> Attribute {
     return Attribute(AttributeNames.classname, value)
   }
 
-  public static func contenteditable(value: Bool) -> Attribute {
+  public static func contenteditable(_ value: Bool) -> Attribute {
     return Attribute(AttributeNames.contenteditable, value)
   }
 
-  public static func contextmenu(value: String) -> Attribute {
+  public static func contextmenu(_ value: String) -> Attribute {
     return Attribute(AttributeNames.contextmenu, value)
   }
 
-  public static func dir(value: DirValue) -> Attribute {
+  public static func dir(_ value: DirValue) -> Attribute {
     return Attribute(AttributeNames.dir, value)
   }
 
-  public static func draggable(value: Bool) -> Attribute {
+  public static func draggable(_ value: Bool) -> Attribute {
     return Attribute(AttributeNames.draggable, value)
   }
 
@@ -70,19 +70,19 @@ extension Attributes {
     return Attribute(AttributeNames.draggable, DataAttributeValue(label: label, value: value))
   }
 
-  public static func dropzone(value: DropzoneValue) -> Attribute {
+  public static func dropzone(_ value: DropzoneValue) -> Attribute {
     return Attribute(AttributeNames.dropzone, value)
   }
 
-  public static func hidden(value: Bool) -> Attribute {
+  public static func hidden(_ value: Bool) -> Attribute {
     return Attribute(AttributeNames.hidden, value)
   }
 
-  public static func id(value: String) -> Attribute {
+  public static func id(_ value: String) -> Attribute {
     return Attribute(AttributeNames.id, value)
   }
 
-  public static func title(value: String) -> Attribute {
+  public static func title(_ value: String) -> Attribute {
     return Attribute(AttributeNames.title, value)
   }
 }

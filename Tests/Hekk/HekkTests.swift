@@ -50,6 +50,6 @@ class HekkTests: XCTestCase {
 
 extension String {
   static func multiline(lines: String...) -> String {
-    return lines.joinWithSeparator("\r\n")
+    return lines.joined(separator: "\r\n")
   }
 }

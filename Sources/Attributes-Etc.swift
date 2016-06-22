@@ -276,74 +276,74 @@ extension Attributes {
   }
 
   // TODO: Should use mime-types rather than just a string
-  public static func accept(value: String) -> Attribute {
+  public static func accept(_ value: String) -> Attribute {
     return Attribute(AttributeNames.accept, value)
   }
 
-  public static func autocapitalize(value: AutoCapitalizeValue) -> Attribute {
+  public static func autocapitalize(_ value: AutoCapitalizeValue) -> Attribute {
     return Attribute(AttributeNames.autocapitalize, value)
   }
 
-  public static func autocomplete(value: AutoCompleteValue) -> Attribute {
+  public static func autocomplete(_ value: AutoCompleteValue) -> Attribute {
     return Attribute(AttributeNames.autocomplete, value)
   }
 
-  public static func autocorrect(value: OnOffValue) -> Attribute {
+  public static func autocorrect(_ value: OnOffValue) -> Attribute {
     return Attribute(AttributeNames.autocorrect, value)
   }
 
-  public static func autofocus(value: Bool) -> Attribute {
+  public static func autofocus(_ value: Bool) -> Attribute {
     return Attribute(AttributeNames.autofocus, value)
   }
 
-  public static func autosave(value: String) -> Attribute {
+  public static func autosave(_ value: String) -> Attribute {
     return Attribute(AttributeNames.autosave, value)
   }
 
-  public static func acceptCharset(value: String) -> Attribute {
+  public static func acceptCharset(_ value: String) -> Attribute {
     return Attribute(AttributeNames.acceptCharset, value)
   }
 
   // TODO: Should use a URL type
-  public static func action(value: String) -> Attribute {
+  public static func action(_ value: String) -> Attribute {
     return Attribute(AttributeNames.action, value)
   }
 
-  public static func alt(value: String) -> Attribute {
+  public static func alt(_ value: String) -> Attribute {
     return Attribute(AttributeNames.alt, value)
   }
 
   public static let async = Attribute(AttributeNames.async, AttributeNames.async, isBoolean: true)
 
   // TODO: Should use an enum of valid charsets
-  public static func charset(value: String) -> Attribute {
+  public static func charset(_ value: String) -> Attribute {
     return Attribute(AttributeNames.charset, value)
   }
 
   public static let checked = Attribute(AttributeNames.checked, AttributeNames.checked, isBoolean: true)
 
-  public static func content(value: String) -> Attribute {
+  public static func content(_ value: String) -> Attribute {
     return Attribute(AttributeNames.content, value)
   }
 
-  public static func cite(value: String) -> Attribute {
+  public static func cite(_ value: String) -> Attribute {
     return Attribute(AttributeNames.cite, value)
   }
 
-  public static func crossorigin(value: CrossOriginValue) -> Attribute {
+  public static func crossorigin(_ value: CrossOriginValue) -> Attribute {
     return Attribute(AttributeNames.crossorigin, value)
   }
 
-  public static func cols(value: Int) -> Attribute {
+  public static func cols(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.cols, value)
   }
 
-  public static func colspan(value: Int) -> Attribute {
+  public static func colspan(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.colspan, value)
   }
 
   // TODO: Again, should use a mime-type
-  public static func contentType(value: String) -> Attribute {
+  public static func contentType(_ value: String) -> Attribute {
     return Attribute(AttributeNames.contentType, value)
   }
 
@@ -351,98 +351,98 @@ extension Attributes {
 
   public static let deferred = Attribute(AttributeNames.deferred, AttributeNames.deferred, isBoolean: true)
 
-  public static func enctype(value: String) -> Attribute {
+  public static func enctype(_ value: String) -> Attribute {
     return Attribute(AttributeNames.enctype, value)
   }
 
 
-  public static func forInput(value: String) -> Attribute {
+  public static func forInput(_ value: String) -> Attribute {
     return Attribute(AttributeNames.forInput, value)
   }
 
-  public static func form(value: String) -> Attribute {
+  public static func form(_ value: String) -> Attribute {
     return Attribute(AttributeNames.form, value)
   }
 
-  public static func formaction(value: String) -> Attribute {
+  public static func formaction(_ value: String) -> Attribute {
     return Attribute(AttributeNames.formaction, value)
   }
 
-  public static func formmethod(value: MethodValue) -> Attribute {
+  public static func formmethod(_ value: MethodValue) -> Attribute {
     return Attribute(AttributeNames.formmethod, value)
   }
 
-  public static func formtarget(value: TargetValue) -> Attribute {
+  public static func formtarget(_ value: TargetValue) -> Attribute {
     return Attribute(AttributeNames.formtarget, value)
   }
 
   public static let formvalidate = Attribute(AttributeNames.formvalidate, AttributeNames.formvalidate, isBoolean: true)
 
-  public static func headers(values: String...) -> Attribute {
-    return Attribute(AttributeNames.headers, values.joinWithSeparator(" "))
+  public static func headers(_ values: String...) -> Attribute {
+    return Attribute(AttributeNames.headers, values.joined(separator: " "))
   }
 
-  public static func height(value: Int) -> Attribute {
+  public static func height(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.height, value)
   }
 
-  public static func httpEquiv(value: HTTPEquivValue) -> Attribute {
+  public static func httpEquiv(_ value: HTTPEquivValue) -> Attribute {
     return Attribute(AttributeNames.httpEquiv, value)
   }
 
-  public static func href(value: String) -> Attribute {
+  public static func href(_ value: String) -> Attribute {
     return Attribute(AttributeNames.href, value)
   }
 
-  public static func hreflang(value: String) -> Attribute {
+  public static func hreflang(_ value: String) -> Attribute {
     return Attribute(AttributeNames.hreflang, value)
   }
 
-  public static func inputmode(value: InputModeValue) -> Attribute {
+  public static func inputmode(_ value: InputModeValue) -> Attribute {
     return Attribute(AttributeNames.inputmode, value)
   }
 
-  public static func inputType(value: InputTypeValue) -> Attribute {
+  public static func inputType(_ value: InputTypeValue) -> Attribute {
     return Attribute(AttributeNames.inputType, value)
   }
 
-  public static func label(value: String) -> Attribute {
+  public static func label(_ value: String) -> Attribute {
     return Attribute(AttributeNames.label, value)
   }
 
-  public static func max(value: Int) -> Attribute {
+  public static func max(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.max, value)
   }
 
-  public static func maxlength(value: Int) -> Attribute {
+  public static func maxlength(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.maxlength, value)
   }
 
-  public static func min(value: Int) -> Attribute {
+  public static func min(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.min, value)
   }
 
-  public static func minlength(value: Int) -> Attribute {
+  public static func minlength(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.minlength, value)
   }
 
-  public static func method(value: MethodValue) -> Attribute {
+  public static func method(_ value: MethodValue) -> Attribute {
     return Attribute(AttributeNames.method, value)
   }
 
   public static let multiple = Attribute(AttributeNames.multiple, AttributeNames.multiple, isBoolean: true)
 
-  public static func name(value: String) -> Attribute {
+  public static func name(_ value: String) -> Attribute {
     return Attribute(AttributeNames.name, value)
   }
 
   public static let novalidate = Attribute(AttributeNames.novalidate, AttributeNames.novalidate, isBoolean: true)
 
-  public static func pattern(value: String) -> Attribute {
+  public static func pattern(_ value: String) -> Attribute {
     return Attribute(AttributeNames.pattern, value)
   }
 
-  public static func placeholder(value: String) -> Attribute {
+  public static func placeholder(_ value: String) -> Attribute {
     return Attribute(AttributeNames.placeholder, value)
   }
 
@@ -450,101 +450,101 @@ extension Attributes {
 
   public static let required = Attribute(AttributeNames.required, AttributeNames.required, isBoolean: true)
 
-  public static func rel(values: RelValue...) -> Attribute {
-    return Attribute(AttributeNames.rel, values.map {$0.stringValue}.joinWithSeparator(" "))
+  public static func rel(_ values: RelValue...) -> Attribute {
+    return Attribute(AttributeNames.rel, values.map {$0.stringValue}.joined(separator: " "))
   }
 
-  public static func results(value: Int) -> Attribute {
+  public static func results(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.results, value)
   }
 
   public static let reversed = Attribute(AttributeNames.reversed, AttributeNames.reversed, isBoolean: true)
 
-  public static func rows(value: Int) -> Attribute {
+  public static func rows(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.rows, value)
   }
 
-  public static func rowspan(value: Int) -> Attribute {
+  public static func rowspan(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.rowspan, value)
   }
 
-  public static func scope(value: ScopeValue) -> Attribute {
+  public static func scope(_ value: ScopeValue) -> Attribute {
     return Attribute(AttributeNames.scope, value)
   }
 
-  public static func scriptType(value: String) -> Attribute {
+  public static func scriptType(_ value: String) -> Attribute {
     return Attribute(AttributeNames.scriptType, value)
   }
 
   public static let selected = Attribute(AttributeNames.selected, AttributeNames.selected, isBoolean: true)
 
-  public static func selectionDirection(value: SelectionDirectionValue) -> Attribute {
+  public static func selectionDirection(_ value: SelectionDirectionValue) -> Attribute {
     return Attribute(AttributeNames.selectionDirection, value)
   }
 
-  public static func selectionEnd(value: Int) -> Attribute {
+  public static func selectionEnd(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.selectionEnd, value)
   }
 
-  public static func selectionStart(value: Int) -> Attribute {
+  public static func selectionStart(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.selectionStart, value)
   }
 
-  public static func sizes(values: String...) -> Attribute {
-    return Attribute(AttributeNames.rel, values.joinWithSeparator(" "))
+  public static func sizes(_ values: String...) -> Attribute {
+    return Attribute(AttributeNames.rel, values.joined(separator: " "))
   }
 
-  public static func size(value: Int) -> Attribute {
+  public static func size(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.size, value)
   }
 
-  public static func spellcheck(value: SpellCheckValue) -> Attribute {
+  public static func spellcheck(_ value: SpellCheckValue) -> Attribute {
     return Attribute(AttributeNames.spellcheck, value)
   }
 
-  public static func src(value: String) -> Attribute {
+  public static func src(_ value: String) -> Attribute {
     return Attribute(AttributeNames.src, value)
   }
 
-  public static func srcset(values: String...) -> Attribute {
-    return Attribute(AttributeNames.srcset, values.joinWithSeparator(" "))
+  public static func srcset(_ values: String...) -> Attribute {
+    return Attribute(AttributeNames.srcset, values.joined(separator: " "))
   }
 
-  public static func start(value: Int) -> Attribute {
+  public static func start(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.start, value)
   }
 
-  public static func step(value: Int) -> Attribute {
+  public static func step(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.step, value)
   }
 
   public static let step = Attribute(AttributeNames.step, "any")
 
-  public static func tabindex(value: Int) -> Attribute {
+  public static func tabindex(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.tabindex, value)
   }
 
-  public static func target(value: TargetValue) -> Attribute {
+  public static func target(_ value: TargetValue) -> Attribute {
     return Attribute(AttributeNames.target, value)
   }
 
-  public static func text(value: String) -> Attribute {
+  public static func text(_ value: String) -> Attribute {
     return Attribute(AttributeNames.text, value)
   }
 
-  public static func value(value: String) -> Attribute {
+  public static func value(_ value: String) -> Attribute {
     return Attribute(AttributeNames.value, value)
   }
 
-  public static func width(value: Int) -> Attribute {
+  public static func width(_ value: Int) -> Attribute {
     return Attribute(AttributeNames.width, value)
   }
 
-  public static func wrap(value: WrapValue) -> Attribute {
+  public static func wrap(_ value: WrapValue) -> Attribute {
     return Attribute(AttributeNames.wrap, value)
   }
 
-  public static func xmlns(value: String) -> Attribute {
+  public static func xmlns(_ value: String) -> Attribute {
     return Attribute(AttributeNames.xmlns, value)
   }
 }
