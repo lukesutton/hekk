@@ -26,7 +26,7 @@ public struct Compiler {
   }
 
   func compileNode(_ node: Node, forSpec spec: Spec, indentLevel: Int = 0) -> [String] {
-    let indent = String(repeated: Character(" "), count: indentLevel * 2)
+    let indent = String(repeating: " ", count: indentLevel * 2)
 
     switch node {
       case let node as LiteralNode:

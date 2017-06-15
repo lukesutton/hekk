@@ -4,7 +4,7 @@ public protocol LiteralNode: Node {
 
 extension LiteralNode {
   public var stringValue: String {
-    return String(self)
+    return String(describing: self)
   }
 }
 
