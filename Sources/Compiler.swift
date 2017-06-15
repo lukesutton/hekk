@@ -16,9 +16,12 @@ public struct Compiler {
         let doctype = "<!DOCTYPE html>\r\n"
         return doctype + compile(document.root)
       case .XHTML:
-        // TODO: Inject the xmlns attribute and encoding etc
         return compile(document.root)
     }
+  }
+
+  public func compile(_ fragment: Fragment) -> String {
+    return fragment.nodes.map { compile($0) }.joined(separator: "\r\n")
   }
 
   public func compile(_ node: Node) -> String {
@@ -29,30 +32,28 @@ public struct Compiler {
     let indent = String(repeating: " ", count: indentLevel * 2)
 
     switch node {
-      case let node as LiteralNode:
-        return [indent + node.stringValue]
-      case let node as Tag:
-        let attrs =  compileAttributes(node.attributes, forSpec: spec)
-        let children = node.children.flatMap {compileNode($0, forSpec: spec, indentLevel: indentLevel + 1)}
+    case let .text(value):
+        return [indent + value.stringValue]
+      case let .tag(name, attributes, children, _):
+        let attrs =  compileAttributes(attributes, forSpec: spec)
+        let children = children.flatMap {compileNode($0, forSpec: spec, indentLevel: indentLevel + 1)}
         if attrs.isEmpty {
-          return ["\(indent)<\(node.name)>"] + children + ["\(indent)</\(node.name)>"]
+          return ["\(indent)<\(name)>"] + children + ["\(indent)</\(name)>"]
         }
         else {
-          return ["\(indent)<\(node.name) \(attrs)>"] + children + ["\(indent)</\(node.name)>"]
+          return ["\(indent)<\(name) \(attrs)>"] + children + ["\(indent)</\(name)>"]
         }
-      case let node as TagSelfClosing:
-        let attrs =  compileAttributes(node.attributes, forSpec: spec)
+      case let .selfClosingTag(name, attributes):
+        let attrs =  compileAttributes(attributes, forSpec: spec)
         if attrs.isEmpty {
-          return ["\(indent)<\(node.name)\(spec != .HTML5 ? "/" : "")>"]
+          return ["\(indent)<\(name)\(spec != .HTML5 ? "/" : "")>"]
         }
         else {
-          return ["\(indent)<\(node.name) \(attrs)\(spec != .HTML5 ? " /" : "")>"]
+          return ["\(indent)<\(name) \(attrs)\(spec != .HTML5 ? " /" : "")>"]
         }
-      case let node as Fragment:
-        return node.nodes.flatMap {compileNode($0, forSpec: spec)}
-      case is Empty:
-        return []
       default:
+        // TODO: This should actually be exhaustive and throw an error if
+        // we hit a .slot node.
         return []
     }
   }

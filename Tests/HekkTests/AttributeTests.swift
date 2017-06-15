@@ -3,15 +3,15 @@ import XCTest
 
 class AttributeTests: XCTestCase {
   func testEquality() {
-    let first = [Attributes.id("what"), Attributes.draggable(true)]
-    let second = [Attributes.id("what"), Attributes.draggable(true)]
+    let first: [Attribute] = [.id("what"), .draggable(true)]
+    let second: [Attribute] = [.id("what"), .draggable(true)]
 
     XCTAssertEqual(first, second)
   }
 
   func testInEquality() {
-    let first = [Attributes.id("what"), Attributes.draggable(true), Attributes.classname("nope")]
-    let second = [Attributes.id("what"), Attributes.draggable(true)]
+    let first: [Attribute] = [.id("what"), .draggable(true), .classname("nope")]
+    let second: [Attribute] = [.id("what"), .draggable(true)]
 
     XCTAssertNotEqual(first, second)
   }

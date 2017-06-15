@@ -1,3 +1,3 @@
-public struct AttributeNames {
-  private init() {}
+enum AttributeNames {
+  
 }

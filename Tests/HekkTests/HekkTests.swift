@@ -4,52 +4,43 @@ import XCTest
 class HekkTests: XCTestCase {
   let HTML5Compiler = Compiler(.HTML5)
   let XHTMLCompiler = Compiler(.XHTML)
-  typealias attr = Attributes
 
   func testSimple() {
-    let layout = div([attr.id("what"), attr.dropzone(.Copy), attr.draggable(false)],
-      p("Ok now"),
-      p("Well", strong("yes"), "what?")
+    let layout = Node.div([.id("what"), .dropzone(.Copy), .draggable(false)],
+      .p([], .text("Ok now")),
+      .p([], .text("Well"), .strong([], .text("yes")), .text("what?"))
     )
 
     print(HTML5Compiler.compile(layout))
   }
 
   func testPage() {
-    let page = document(
-      head(
-        title("Test Page"),
-        link([attr.href("/styles.css"), attr.rel(.Stylesheet)]),
-        script([attr.src("/script.js")])
+    let page = Document([],
+      .head(
+        .title(.text("Test Page")),
+        .link([.href("/styles.css"), .rel(.Stylesheet)]),
+        .script([.src("/script.js")])
       ),
-      body(
-        h1([attr.id("main-title")], "Welcome!"),
-        nav([attr.id("main-nav")],
-          ul(
-            li(a([attr.href("/")], "Home")),
-            li(a([attr.href("/about")], "About")),
-            li(a([attr.href("/products")], "Products")),
-            li(a([attr.href("/contact")], "Contact Us"))
+      .body(
+        .h1([.id("main-title")], .text("Welcome!")),
+        .nav([.id("main-nav")],
+          .ul(
+            .li(.a([.href("/")], .text("Home"))),
+            .li(.a([.href("/about")], .text("About")))
           )
         ),
-        main(
-          h2("You're very welcome"),
-          div([attr.classname("left")],
-            p("Intro text")
+        .main(
+          .h2(.text("You're very welcome")),
+          .div([.classname("left")],
+            .p(.text("Intro text"))
           ),
-          div([attr.classname("right")],
-            p("Whaaaat!")
+          .div([.classname("right")],
+            .p(.text("Whaaaat!"))
           )
         )
       )
     )
 
     print(HTML5Compiler.compile(page))
-  }
-}
-
-extension String {
-  static func multiline(lines: String...) -> String {
-    return lines.joined(separator: "\r\n")
   }
 }

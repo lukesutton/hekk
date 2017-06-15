@@ -1,4 +1,4 @@
-public protocol LiteralNode: Node {
+public protocol LiteralNode {
   var stringValue: String { get }
 }
 
@@ -8,7 +8,6 @@ extension LiteralNode {
   }
 }
 
-// The string should also be sanitised by default.
 extension String: LiteralNode {}
 extension Int: LiteralNode {}
 extension Double: LiteralNode {}

@@ -1,0 +1,41 @@
+{% for type in types.enums %}
+  {% if type.name == "TagNames" %}
+extension Node {
+  {% for var in type.staticVariables %}
+  public static func {{ var.name }}(_ attributes: Set<Attribute>, _ children: Node...) -> Node {
+    return .tag(name: TagNames.{{var.name}}, attributes: attributes, children: children, state: checkState(children))
+  }
+
+  public static func {{ var.name }}(_ attributes: Set<Attribute>, _ children: [Node]) -> Node {
+    return .tag(name: TagNames.{{var.name}}, attributes: attributes, children: children, state: checkState(children))
+  }
+
+  public static func {{ var.name }}(_ children: Node...) -> Node {
+    return .tag(name: TagNames.{{var.name}}, attributes: Set(), children: children, state: checkState(children))
+  }
+
+  public static func {{ var.name }}(_ children: [Node]) -> Node {
+    return .tag(name: TagNames.{{var.name}}, attributes: Set(), children: children, state: checkState(children))
+  }
+
+  public static func {{ var.name }}(_ attributes: Set<Attribute>) -> Node {
+    return .tag(name: TagNames.{{var.name}}, attributes: attributes, children: [], state: .complete)
+  }
+
+  {% endfor %}
+}
+  {% endif %}
+{% endfor %}
+
+{% for type in types.enums %}
+  {% if type.name == "SelfClosingTagNames" %}
+extension Node {
+  {% for var in type.staticVariables %}
+  public static func {{ var.name }}(_ attributes: Set<Attribute> = Set()) -> Node {
+    return .selfClosingTag(name: SelfClosingTagNames.{{var.name}}, attributes: attributes)
+  }
+
+  {% endfor %}
+}
+  {% endif %}
+{% endfor %}

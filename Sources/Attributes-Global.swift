@@ -12,7 +12,7 @@ extension AttributeNames {
   public static let title = "title"
 }
 
-extension Attributes {
+extension Attribute {
   public struct DataAttributeValue: AttributeValue {
     public let label: String
     public let value: LiteralNode

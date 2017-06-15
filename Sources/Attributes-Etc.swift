@@ -73,7 +73,7 @@ extension AttributeNames {
   public static let xmlns = "xmlns"
 }
 
-extension Attributes {
+extension Attribute {
   public enum  AutoCapitalizeValue: String, AttributeValue {
     case None = "none"
     case Sentences = "sentences"

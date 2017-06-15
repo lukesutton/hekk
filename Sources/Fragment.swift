@@ -1,11 +1,11 @@
-public struct Fragment: Node {
+public struct Fragment {
   let nodes: [Node]
+  let state: TemplateState
+}
 
-  public init(_ nodes: Node...) {
+extension Fragment {
+  init(_ nodes: Node...) {
     self.nodes = nodes
-  }
-
-  public init(_ nodes: [Node]) {
-    self.nodes = nodes
+    self.state = checkState(nodes)
   }
 }

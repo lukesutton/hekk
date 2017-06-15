@@ -1,7 +1,7 @@
 public struct Document {
   public let root: Node
 
-  internal init(_ attributes: [Attribute], _ head: Node, _ body: Node) {
-    self.root = html(attributes, head, body)
+  public init(_ attributes: Set<Attribute>, _ nodes: Node...) {
+    self.root = .html(attributes, nodes)
   }
 }
