@@ -11,4 +11,5 @@ extension LiteralNode {
 extension String: LiteralNode {}
 extension Int: LiteralNode {}
 extension Double: LiteralNode {}
+extension Float: LiteralNode {}
 extension Bool: LiteralNode {}

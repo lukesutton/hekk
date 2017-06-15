@@ -15,3 +15,35 @@ public enum Node {
 		}
 	}
 }
+
+extension Node: ExpressibleByStringLiteral {
+	public typealias StringLiteralType = String
+	public typealias ExtendedGraphemeClusterLiteralType = String
+	public typealias UnicodeScalarLiteralType = String
+
+  public init(stringLiteral: String) {
+		self = .text(stringLiteral)
+	}
+}
+
+extension Node: ExpressibleByIntegerLiteral {
+	public typealias IntegerLiteralType = Int
+
+  public init(integerLiteral: Int) {
+		self = .text(integerLiteral)
+	}
+}
+
+extension Node: ExpressibleByFloatLiteral {
+	public typealias IntegerFloatType = Int
+
+  public init(floatLiteral: Float) {
+		self = .text(floatLiteral)
+	}
+}
+
+extension Node: ExpressibleByBooleanLiteral {
+  public init(booleanLiteral: Bool) {
+		self = .text(booleanLiteral)
+	}
+}

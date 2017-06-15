@@ -7,8 +7,8 @@ class HekkTests: XCTestCase {
 
   func testSimple() {
     let layout = Node.div([.id("what"), .dropzone(.Copy), .draggable(false)],
-      .p([], .text("Ok now")),
-      .p([], .text("Well"), .strong([], .text("yes")), .text("what?"))
+      .p("Ok now"),
+      .p("Well", .strong("yes", "what?"))
     )
 
     print(HTML5Compiler.compile(layout))
@@ -17,25 +17,25 @@ class HekkTests: XCTestCase {
   func testPage() {
     let page = Document([],
       .head(
-        .title(.text("Test Page")),
+        .title("Test Page"),
         .link([.href("/styles.css"), .rel(.Stylesheet)]),
         .script([.src("/script.js")])
       ),
       .body(
-        .h1([.id("main-title")], .text("Welcome!")),
+        .h1([.id("main-title")], "Welcome!"),
         .nav([.id("main-nav")],
           .ul(
-            .li(.a([.href("/")], .text("Home"))),
-            .li(.a([.href("/about")], .text("About")))
+            .li(.a([.href("/")], "Home")),
+            .li(.a([.href("/about")], "About"))
           )
         ),
         .main(
-          .h2(.text("You're very welcome")),
+          .h2("You're very welcome"),
           .div([.classname("left")],
-            .p(.text("Intro text"))
+            .p("Intro text")
           ),
           .div([.classname("right")],
-            .p(.text("Whaaaat!"))
+            .p("Whaaaat!")
           )
         )
       )
