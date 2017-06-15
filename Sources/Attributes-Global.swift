@@ -23,9 +23,9 @@ extension Attribute {
   }
 
   public enum DirValue: String, AttributeValue {
-    case LeftToRight = "ltr"
-    case RightToLeft = "rtl"
-    case Auto = "auto"
+    case leftToRight = "ltr"
+    case rightToLeft = "rtl"
+    case auto = "auto"
 
     public var stringValue: String {
       return rawValue
@@ -33,9 +33,9 @@ extension Attribute {
   }
 
   public enum DropzoneValue: String, AttributeValue {
-    case Copy = "copy"
-    case Move = "move"
-    case Link = "link"
+    case copy = "copy"
+    case move = "move"
+    case link = "link"
 
     public var stringValue: String {
       return rawValue

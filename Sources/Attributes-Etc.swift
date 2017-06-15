@@ -75,10 +75,10 @@ extension AttributeNames {
 
 extension Attribute {
   public enum  AutoCapitalizeValue: String, AttributeValue {
-    case None = "none"
-    case Sentences = "sentences"
-    case Words = "words"
-    case Characters = "characters"
+    case none = "none"
+    case sentences = "sentences"
+    case words = "words"
+    case characters = "characters"
 
     public var stringValue: String {
       return rawValue
@@ -86,25 +86,25 @@ extension Attribute {
   }
 
   public enum AutoCompleteValue: String, AttributeValue {
-    case Off = "off"
-    case On = "on"
-    case Name = "name"
-    case HonorificPrefix = "honorific-prefix"
-    case GivenName = "given-name"
-    case AdditionalName = "additional-name"
-    case FamilyName = "family-name"
-    case HonorificSuffix = "honorific-suffix"
-    case Nickname = "nickname"
-    case Email = "email"
-    case Username = "username"
-    case NewPassword = "new-password"
-    case CurrentPassword = "current-password"
-    case OrganisationTitle = "organisation-title"
-    case Organization = "organisation"
-    case StreetAddress = "street-address"
-    case AddressLine1 = "address-line-1"
-    case AddressLine2 = "address-line-2"
-    case AddressLine3 = "address-line-3"
+    case off = "off"
+    case on = "on"
+    case name = "name"
+    case honorificPrefix = "honorific-prefix"
+    case givenName = "given-name"
+    case additionalName = "additional-name"
+    case familyName = "family-name"
+    case honorificSuffix = "honorific-suffix"
+    case nickname = "nickname"
+    case email = "email"
+    case username = "username"
+    case newPassword = "new-password"
+    case currentPassword = "current-password"
+    case organisationTitle = "organisation-title"
+    case organization = "organisation"
+    case streetAddress = "street-address"
+    case addressLine1 = "address-line-1"
+    case addressLine2 = "address-line-2"
+    case addressLine3 = "address-line-3"
 
     public var stringValue: String {
       return rawValue
@@ -112,8 +112,8 @@ extension Attribute {
   }
 
   public enum OnOffValue: String, AttributeValue {
-    case On = "on"
-    case Off = "off"
+    case on = "on"
+    case off = "off"
 
     public var stringValue: String {
       return rawValue
@@ -121,8 +121,8 @@ extension Attribute {
   }
 
   public enum CrossOriginValue: String, AttributeValue {
-    case Anonymous = "anonymous"
-    case UseCredentials = "use-credentials"
+    case anonymous = "anonymous"
+    case useCredentials = "use-credentials"
 
     public var stringValue: String {
       return rawValue
@@ -139,10 +139,10 @@ extension Attribute {
   }
 
   public enum TargetValue: String, AttributeValue {
-    case Default = "_self"
-    case Blank = "_blank"
-    case Parent = "_parent"
-    case Top = "_top"
+    case `default` = "_self"
+    case blank = "_blank"
+    case parent = "_parent"
+    case top = "_top"
 
     public var stringValue: String {
       return rawValue
@@ -150,9 +150,9 @@ extension Attribute {
   }
 
   public enum HTTPEquivValue: String, AttributeValue {
-    case ContentSecurityPolicy = "Content-Security-Policy"
-    case DefaultStyle = "default-style"
-    case Refresh = "refresh"
+    case contentSecurityPolicy = "Content-Security-Policy"
+    case defaultStyle = "default-style"
+    case refresh = "refresh"
 
     public var stringValue: String {
       return rawValue
@@ -160,16 +160,16 @@ extension Attribute {
   }
 
   public enum InputModeValue: String, AttributeValue {
-    case Verbatim = "verbatim"
-    case Latin = "latin"
-    case LatinNam = "latin-name"
-    case LatinProse = "latin-prose"
-    case FullWidthLatin = "full-width-latin"
-    case Kana = "kana"
-    case Katakana = "katakana"
-    case Numeric = "numeric"
-    case Tel = "tel"
-    case Email = "email"
+    case verbatim = "verbatim"
+    case latin = "latin"
+    case latinNam = "latin-name"
+    case latinProse = "latin-prose"
+    case fullWidthLatin = "full-width-latin"
+    case kana = "kana"
+    case katakana = "katakana"
+    case numeric = "numeric"
+    case tel = "tel"
+    case email = "email"
     case URL = "url"
 
     public var stringValue: String {
@@ -178,29 +178,29 @@ extension Attribute {
   }
 
   public enum InputTypeValue: String, AttributeValue {
-    case Button = "button"
-    case Checkbox = "checkbox"
-    case Color = "color"
-    case Date = "date"
-    case DateTime = "datetime"
-    case DateTimeLocal = "datetime-local"
-    case Email = "email"
-    case File = "file"
-    case Hidden = "hidden"
-    case Image = "image"
-    case Month = "month"
-    case Number = "number"
-    case Password = "password"
-    case Radio = "radio"
-    case Range = "range"
-    case Reset = "reset"
-    case Search = "search"
-    case Submit = "submit"
-    case Tel = "tel"
-    case Text = "text"
-    case Time = "Time"
+    case button = "button"
+    case checkbox = "checkbox"
+    case color = "color"
+    case date = "date"
+    case dateTime = "datetime"
+    case dateTimeLocal = "datetime-local"
+    case email = "email"
+    case file = "file"
+    case hidden = "hidden"
+    case image = "image"
+    case month = "month"
+    case number = "number"
+    case password = "password"
+    case radio = "radio"
+    case range = "range"
+    case reset = "reset"
+    case search = "search"
+    case submit = "submit"
+    case tel = "tel"
+    case text = "text"
+    case time = "Time"
     case URL = "url"
-    case Week = "week"
+    case week = "week"
 
     public var stringValue: String {
       return rawValue
@@ -208,26 +208,26 @@ extension Attribute {
   }
 
   public enum RelValue: String, AttributeValue {
-    case Alternate = "alternate"
-    case Archives = "archives"
-    case Author = "author"
-    case Bookmark = "bookmark"
-    case External = "external"
-    case Help = "help"
-    case Icon = "icon"
-    case License = "license"
-    case Manifest = "manifest"
-    case Next = "next"
-    case NoFollow = "nofollow"
-    case NoOpener = "noopener"
-    case NoReferrer = "noreferrer"
-    case PingBack = "pingback"
-    case Prefetch = "prefetch"
-    case Preload = "preload"
-    case Prev = "prev"
-    case Search = "search"
-    case Stylesheet = "stylesheet"
-    case Tag = "Tag"
+    case alternate = "alternate"
+    case archives = "archives"
+    case author = "author"
+    case bookmark = "bookmark"
+    case external = "external"
+    case help = "help"
+    case icon = "icon"
+    case license = "license"
+    case manifest = "manifest"
+    case next = "next"
+    case noFollow = "nofollow"
+    case noOpener = "noopener"
+    case noReferrer = "noreferrer"
+    case pingBack = "pingback"
+    case prefetch = "prefetch"
+    case preload = "preload"
+    case prev = "prev"
+    case search = "search"
+    case stylesheet = "stylesheet"
+    case tag = "Tag"
 
     public var stringValue: String {
       return rawValue
@@ -235,11 +235,11 @@ extension Attribute {
   }
 
   public enum ScopeValue: String, AttributeValue {
-    case Row = "row"
-    case Col = "col"
-    case Rowgroup = "rowgroup"
-    case Colgroup = "colgroup"
-    case Auto = "auto"
+    case row = "row"
+    case col = "col"
+    case rowgroup = "rowgroup"
+    case colgroup = "colgroup"
+    case auto = "auto"
 
     public var stringValue: String {
       return rawValue
@@ -247,9 +247,9 @@ extension Attribute {
   }
 
   public enum SelectionDirectionValue: String, AttributeValue {
-    case Forward = "forward"
-    case Backward = "backward"
-    case None = "none"
+    case forward = "forward"
+    case backward = "backward"
+    case none = "none"
 
     public var stringValue: String {
       return rawValue
@@ -257,9 +257,9 @@ extension Attribute {
   }
 
   public enum SpellCheckValue: String, AttributeValue {
-    case Yes = "true"
-    case No = "false"
-    case Default = "default"
+    case yes = "true"
+    case no = "false"
+    case `default` = "default"
 
     public var stringValue: String {
       return rawValue
@@ -267,8 +267,8 @@ extension Attribute {
   }
 
   public enum WrapValue: String, AttributeValue {
-    case Hard = "hard"
-    case Soft = "soft"
+    case hard = "hard"
+    case soft = "soft"
 
     public var stringValue: String {
       return rawValue

@@ -18,7 +18,7 @@ class HekkTests: XCTestCase {
     let page = Document([],
       .head(
         .title("Test Page"),
-        .link([.href("/styles.css"), .rel(.Stylesheet)]),
+        .link([.href("/styles.css"), .rel(.stylesheet)]),
         .script([.src("/script.js")])
       ),
       .body(
