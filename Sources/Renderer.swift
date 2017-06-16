@@ -20,10 +20,6 @@ public struct Renderer {
     }
   }
 
-  public func render(_ fragment: Fragment) throws -> String {
-    return try fragment.nodes.map { try render($0) }.joined(separator: "\r\n")
-  }
-
   public func render(_ node: Node) throws -> String {
     return try renderNode(node, forSpec: spec).joined(separator: "\r\n")
   }
