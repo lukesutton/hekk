@@ -11,7 +11,7 @@ class HekkTests: XCTestCase {
       .p("Well", .strong("yes", "what?"))
     )
 
-    print(HTML5Renderer.render(layout))
+    print(try! HTML5Renderer.render(layout))
   }
 
   func testPage() {
@@ -41,6 +41,6 @@ class HekkTests: XCTestCase {
       )
     )
 
-    print(HTML5Renderer.render(page))
+    print(try! HTML5Renderer.render(page))
   }
 }

@@ -10,25 +10,25 @@ public struct Renderer {
     self.spec = spec
   }
 
-  public func render(_ document: Document) -> String {
+  public func render(_ document: Document) throws -> String {
     switch spec {
       case .HTML5:
         let doctype = "<!DOCTYPE html>\r\n"
-        return doctype + render(document.root)
+        return doctype + (try render(document.root))
       case .XHTML:
-        return render(document.root)
+        return try render(document.root)
     }
   }
 
-  public func render(_ fragment: Fragment) -> String {
-    return fragment.nodes.map { render($0) }.joined(separator: "\r\n")
+  public func render(_ fragment: Fragment) throws -> String {
+    return try fragment.nodes.map { try render($0) }.joined(separator: "\r\n")
   }
 
-  public func render(_ node: Node) -> String {
-    return renderNode(node, forSpec: spec).joined(separator: "\r\n")
+  public func render(_ node: Node) throws -> String {
+    return try renderNode(node, forSpec: spec).joined(separator: "\r\n")
   }
 
-  func renderNode(_ node: Node, forSpec spec: Spec, indentLevel: Int = 0) -> [String] {
+  func renderNode(_ node: Node, forSpec spec: Spec, indentLevel: Int = 0) throws -> [String] {
     let indent = String(repeating: " ", count: indentLevel * 2)
 
     switch node {
@@ -36,7 +36,7 @@ public struct Renderer {
         return [indent + value.stringValue]
       case let .tag(name, attributes, children, _):
         let attrs =  renderAttributes(attributes, forSpec: spec)
-        let children = children.flatMap { renderNode($0, forSpec: spec, indentLevel: indentLevel + 1) }
+        let children = try children.flatMap { try renderNode($0, forSpec: spec, indentLevel: indentLevel + 1) }
         if attrs.isEmpty {
           return ["\(indent)<\(name)>"] + children + ["\(indent)</\(name)>"]
         }
@@ -51,10 +51,8 @@ public struct Renderer {
         else {
           return ["\(indent)<\(name) \(attrs)\(spec != .HTML5 ? " /" : "")>"]
         }
-      default:
-        // TODO: This should actually be exhaustive and throw an error if
-        // we hit a .slot node.
-        return []
+      case let .slot(name):
+        throw PendingSlotError(name: name)
     }
   }
 

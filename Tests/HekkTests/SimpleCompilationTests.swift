@@ -7,6 +7,6 @@ class SimpleCompilationTests: XCTestCase {
 
   func testSelfClosingTag() {
     let node = Node.img([.src("/icon.png"), .alt("Document icon")])
-    XCTAssertEqual(HTML5Renderer.render(node), "<img alt=\"Document icon\" src=\"/icon.png\">")
+    XCTAssertEqual(try! HTML5Renderer.render(node), "<img alt=\"Document icon\" src=\"/icon.png\">")
   }
 }
