@@ -2,11 +2,11 @@ import Hekk
 import XCTest
 
 class SimpleCompilationTests: XCTestCase {
-  let HTML5Compiler = Compiler(.HTML5)
-  let XHTMLCompiler = Compiler(.XHTML)
+  let HTML5Renderer = Renderer(.HTML5)
+  let XHTMLRenderer = Renderer(.XHTML)
 
   func testSelfClosingTag() {
     let node = Node.img([.src("/icon.png"), .alt("Document icon")])
-    XCTAssertEqual(HTML5Compiler.compile(node), "<img alt=\"Document icon\" src=\"/icon.png\">")
+    XCTAssertEqual(HTML5Renderer.render(node), "<img alt=\"Document icon\" src=\"/icon.png\">")
   }
 }

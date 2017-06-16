@@ -2,16 +2,16 @@ import Hekk
 import XCTest
 
 class HekkTests: XCTestCase {
-  let HTML5Compiler = Compiler(.HTML5)
-  let XHTMLCompiler = Compiler(.XHTML)
+  let HTML5Renderer = Renderer(.HTML5)
+  let XHTMLRenderer = Renderer(.XHTML)
 
   func testSimple() {
-    let layout = Node.div([.id("what"), .dropzone(.Copy), .draggable(false)],
+    let layout = Node.div([.id("what"), .dropzone(.copy), .draggable(false)],
       .p("Ok now"),
       .p("Well", .strong("yes", "what?"))
     )
 
-    print(HTML5Compiler.compile(layout))
+    print(HTML5Renderer.render(layout))
   }
 
   func testPage() {
@@ -41,6 +41,6 @@ class HekkTests: XCTestCase {
       )
     )
 
-    print(HTML5Compiler.compile(page))
+    print(HTML5Renderer.render(page))
   }
 }
