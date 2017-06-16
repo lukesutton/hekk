@@ -16,8 +16,7 @@ The main target for this library is web-frameworks written in Swift.
 ```swift
 import Hekk
 
-let fragment = Fragment(
-  .div([.id("body")]
+let div = Node.div([.id("body")]
     .h1("Welcome!"),
     .p("This is a template fragment."),
     .p("It results in a nested structure composed of structs.")
@@ -33,7 +32,7 @@ import Hekk
 let lucky = true
 let numbers = [1, 2, 3, 4, 5]
 
-let fragment = Fragment(
+let fragment = Node.fragment(
   .when(lucky) {
     .each(number) { n in
       return .p("The number is:", .text(n))
