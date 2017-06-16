@@ -1,3 +1,5 @@
+![](https://cdn.rawgit.com/lukesutton/hekk/master/logo.svg)
+
 # Hekk
 
 This is a Swift library which provides a domain-specific-language for generating HTML markup. There core idea is to expose all of Swift's features when generating markup. Rather than defining a templating language with it's own semantics, we can just use Swift.
