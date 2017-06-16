@@ -25,6 +25,25 @@ let fragment = Fragment(
 )
 ```
 
+While you can easily use Swift's control structures for conditionals and generating markup from collections, Hekk does provide some helpers to make things more egonomic. For example, here is a conditional, then generating markup for each element in a sequence.
+
+```swift
+import Hekk
+
+let lucky = true
+let numbers = [1, 2, 3, 4, 5]
+
+let fragment = Fragment(
+  .when(lucky) {
+    .each(number) { n in
+      return .p("The number is:", .text(n))
+    }
+  }
+)
+```
+
+The important thing here is that these are _optional_ since this is just Swift code.
+
 ## Todo
 
 - [ ] Add complete set of tests

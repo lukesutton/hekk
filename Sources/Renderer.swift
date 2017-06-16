@@ -53,6 +53,8 @@ public struct Renderer {
         }
       case let .slot(name):
         throw PendingSlotError(name: name)
+      case let .fragment(nodes):
+        return try nodes.flatMap { try renderNode($0, forSpec: spec, indentLevel: indentLevel) }
     }
   }
 
