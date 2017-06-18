@@ -55,10 +55,10 @@ public struct Renderer {
   }
 
   private func renderAttributes(_ attributes: Set<Attribute>, forSpec spec: Spec) -> String {
-    let sorted = attributes.sorted {$0.name < $1.name}
+    let sorted = attributes.sorted {$0.name.name < $1.name.name}
     return sorted.map { attr in
       if spec == .HTML5 && attr.isBoolean == true {
-        return attr.name
+        return attr.name.name
       }
       else  {
         return "\(attr.name)=\"\(attr.value.stringValue)\""

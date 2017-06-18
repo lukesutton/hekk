@@ -8,7 +8,7 @@
          buildConfigurationList = "OBJ_45";
          buildPhases = (
             "OBJ_48",
-            "OBJ_66",
+            "OBJ_65",
          );
          dependencies = (
          );
@@ -24,11 +24,11 @@
       };
       "Hekk::HekkPackageTests::ProductTarget" = {
          isa = "PBXAggregateTarget";
-         buildConfigurationList = "OBJ_68";
+         buildConfigurationList = "OBJ_67";
          buildPhases = (
          );
          dependencies = (
-            "OBJ_71",
+            "OBJ_70",
          );
          name = "HekkPackageTests";
          productName = "HekkPackageTests";
@@ -81,47 +81,47 @@
       };
       "OBJ_11" = {
          isa = "PBXFileReference";
-         path = "AttributeValues.swift";
+         path = "Attributes-Etc.swift";
          sourceTree = "<group>";
       };
       "OBJ_12" = {
          isa = "PBXFileReference";
-         path = "Attributes-Etc.swift";
+         path = "Attributes-Global.swift";
          sourceTree = "<group>";
       };
       "OBJ_13" = {
          isa = "PBXFileReference";
-         path = "Attributes-Global.swift";
+         path = "Document.swift";
          sourceTree = "<group>";
       };
       "OBJ_14" = {
          isa = "PBXFileReference";
-         path = "Attributes.swift";
+         path = "Hekk.swift";
          sourceTree = "<group>";
       };
       "OBJ_15" = {
          isa = "PBXFileReference";
-         path = "Compiler.swift";
+         path = "LiteralNode.swift";
          sourceTree = "<group>";
       };
       "OBJ_16" = {
          isa = "PBXFileReference";
-         path = "Document.swift";
+         path = "Node+Helpers.swift";
          sourceTree = "<group>";
       };
       "OBJ_17" = {
          isa = "PBXFileReference";
-         path = "Empty.swift";
+         path = "Node-Tags.generated.swift";
          sourceTree = "<group>";
       };
       "OBJ_18" = {
          isa = "PBXFileReference";
-         path = "Fragment.swift";
+         path = "Node.swift";
          sourceTree = "<group>";
       };
       "OBJ_19" = {
          isa = "PBXFileReference";
-         path = "LiteralNode.swift";
+         path = "PendingSlotError.swift";
          sourceTree = "<group>";
       };
       "OBJ_2" = {
@@ -135,63 +135,63 @@
       };
       "OBJ_20" = {
          isa = "PBXFileReference";
-         path = "Node.swift";
+         path = "Query.swift";
          sourceTree = "<group>";
       };
       "OBJ_21" = {
          isa = "PBXFileReference";
-         path = "Tag.swift";
+         path = "Renderer.swift";
          sourceTree = "<group>";
       };
       "OBJ_22" = {
          isa = "PBXFileReference";
-         path = "TagNames.swift";
+         path = "TagName.swift";
          sourceTree = "<group>";
       };
       "OBJ_23" = {
          isa = "PBXFileReference";
-         path = "TagSelfClosing.swift";
+         path = "TemplateState.swift";
          sourceTree = "<group>";
       };
       "OBJ_24" = {
-         isa = "PBXFileReference";
-         path = "Tags.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_25" = {
          isa = "PBXGroup";
          children = (
-            "OBJ_26",
+            "OBJ_25",
          );
          name = "Tests";
          path = "";
          sourceTree = "SOURCE_ROOT";
       };
-      "OBJ_26" = {
+      "OBJ_25" = {
          isa = "PBXGroup";
          children = (
+            "OBJ_26",
             "OBJ_27",
             "OBJ_28",
-            "OBJ_29",
          );
          name = "HekkTests";
          path = "Tests/HekkTests";
          sourceTree = "SOURCE_ROOT";
       };
-      "OBJ_27" = {
+      "OBJ_26" = {
          isa = "PBXFileReference";
          path = "AttributeTests.swift";
          sourceTree = "<group>";
       };
-      "OBJ_28" = {
+      "OBJ_27" = {
          isa = "PBXFileReference";
          path = "HekkTests.swift";
          sourceTree = "<group>";
       };
-      "OBJ_29" = {
+      "OBJ_28" = {
          isa = "PBXFileReference";
          path = "SimpleCompilationTests.swift";
          sourceTree = "<group>";
+      };
+      "OBJ_29" = {
+         isa = "PBXFileReference";
+         path = "Templates";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_3" = {
          isa = "XCBuildConfiguration";
@@ -307,11 +307,11 @@
       };
       "OBJ_38" = {
          isa = "PBXBuildFile";
-         fileRef = "OBJ_27";
+         fileRef = "OBJ_26";
       };
       "OBJ_39" = {
          isa = "PBXBuildFile";
-         fileRef = "OBJ_28";
+         fileRef = "OBJ_27";
       };
       "OBJ_4" = {
          isa = "XCBuildConfiguration";
@@ -346,7 +346,7 @@
       };
       "OBJ_40" = {
          isa = "PBXBuildFile";
-         fileRef = "OBJ_29";
+         fileRef = "OBJ_28";
       };
       "OBJ_41" = {
          isa = "PBXFrameworksBuildPhase";
@@ -448,7 +448,6 @@
             "OBJ_62",
             "OBJ_63",
             "OBJ_64",
-            "OBJ_65",
          );
       };
       "OBJ_49" = {
@@ -460,7 +459,8 @@
          children = (
             "OBJ_6",
             "OBJ_7",
-            "OBJ_25",
+            "OBJ_24",
+            "OBJ_29",
             "OBJ_30",
          );
          path = "";
@@ -533,28 +533,30 @@
          fileRef = "OBJ_23";
       };
       "OBJ_65" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_24";
-      };
-      "OBJ_66" = {
          isa = "PBXFrameworksBuildPhase";
          files = (
          );
       };
-      "OBJ_68" = {
+      "OBJ_67" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
+            "OBJ_68",
             "OBJ_69",
-            "OBJ_70",
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Debug";
+      };
+      "OBJ_68" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Debug";
       };
       "OBJ_69" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
          };
-         name = "Debug";
+         name = "Release";
       };
       "OBJ_7" = {
          isa = "PBXGroup";
@@ -575,19 +577,12 @@
             "OBJ_21",
             "OBJ_22",
             "OBJ_23",
-            "OBJ_24",
          );
          name = "Sources";
          path = "Sources";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_70" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-         };
-         name = "Release";
-      };
-      "OBJ_71" = {
          isa = "PBXTargetDependency";
          target = "Hekk::HekkTests";
       };
@@ -598,7 +593,7 @@
       };
       "OBJ_9" = {
          isa = "PBXFileReference";
-         path = "AttributeNames.swift";
+         path = "AttributeName.swift";
          sourceTree = "<group>";
       };
    };

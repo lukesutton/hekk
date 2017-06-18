@@ -22,6 +22,17 @@ extension Check {
     }
   }
 
+  public static func has(attribute: AttributeName) -> Check {
+    return Check { node in
+      switch node {
+      case let .tag(_, attrs, _, _), let .selfClosingTag(_, attrs):
+        return attrs.first { $0.name.name == attribute.name } != nil
+      default:
+        return false
+      }
+    }
+  }
+
   public static func match(attribute: Attribute) -> Check {
     return Check { node in
       switch node {

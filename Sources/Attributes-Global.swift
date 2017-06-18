@@ -1,17 +1,3 @@
-extension AttributeNames {
-  public static let accesskey = "accesskey"
-  public static let classname = "class"
-  public static let contenteditable = "contenteditable"
-  public static let contextmenu = "contextmenu"
-  public static let dir = "dir"
-  public static let draggable = "draggable"
-  public static let data = "data"
-  public static let dropzone = "dropzone"
-  public static let hidden = "hidden"
-  public static let id = "id"
-  public static let title = "title"
-}
-
 extension Attribute {
   public struct DataAttributeValue: AttributeValue {
     public let label: String
@@ -43,46 +29,46 @@ extension Attribute {
   }
 
   public static func accesskey(_ value: String) -> Attribute {
-    return Attribute(AttributeNames.accesskey, value)
+    return Attribute(.accesskey, value)
   }
 
   public static func classname(_ value: String) -> Attribute {
-    return Attribute(AttributeNames.classname, value)
+    return Attribute(.classname, value)
   }
 
   public static func contenteditable(_ value: Bool) -> Attribute {
-    return Attribute(AttributeNames.contenteditable, value)
+    return Attribute(.contenteditable, value)
   }
 
   public static func contextmenu(_ value: String) -> Attribute {
-    return Attribute(AttributeNames.contextmenu, value)
+    return Attribute(.contextmenu, value)
   }
 
   public static func dir(_ value: DirValue) -> Attribute {
-    return Attribute(AttributeNames.dir, value)
+    return Attribute(.dir, value)
   }
 
   public static func draggable(_ value: Bool) -> Attribute {
-    return Attribute(AttributeNames.draggable, value)
+    return Attribute(.draggable, value)
   }
 
   public static func data(label: String, value: LiteralNode) -> Attribute {
-    return Attribute(AttributeNames.draggable, DataAttributeValue(label: label, value: value))
+    return Attribute(.draggable, DataAttributeValue(label: label, value: value))
   }
 
   public static func dropzone(_ value: DropzoneValue) -> Attribute {
-    return Attribute(AttributeNames.dropzone, value)
+    return Attribute(.dropzone, value)
   }
 
   public static func hidden(_ value: Bool) -> Attribute {
-    return Attribute(AttributeNames.hidden, value)
+    return Attribute(.hidden, value)
   }
 
   public static func id(_ value: String) -> Attribute {
-    return Attribute(AttributeNames.id, value)
+    return Attribute(.id, value)
   }
 
   public static func title(_ value: String) -> Attribute {
-    return Attribute(AttributeNames.title, value)
+    return Attribute(.title, value)
   }
 }

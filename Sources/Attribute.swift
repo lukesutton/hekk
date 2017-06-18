@@ -1,9 +1,9 @@
 public struct Attribute {
-  public let name: String
+  public let name: AttributeName
   public let value: AttributeValue
   public let isBoolean: Bool
 
-  public init(_ name: String, _ value: AttributeValue, isBoolean: Bool = false) {
+  public init(_ name: AttributeName, _ value: AttributeValue, isBoolean: Bool = false) {
     self.name = name
     self.value = value
     self.isBoolean = isBoolean
@@ -12,7 +12,7 @@ public struct Attribute {
 
 extension Attribute: Equatable, Hashable {
   public var hashValue: Int {
-    return "\(name)\(value.stringValue)\(isBoolean)".hashValue
+    return "\(name.name)\(value.stringValue)\(isBoolean)".hashValue
   }
 }
 
