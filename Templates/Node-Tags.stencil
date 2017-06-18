@@ -4,29 +4,29 @@ extension Node {
       {% for var in type.staticVariables %}
       {% if var|annotated:"regularTag" %}
   public static func {{ var.name }}(_ attributes: Set<Attribute>, _ children: Node...) -> Node {
-    return .tag(name: TagName.{{var.name}}.name, attributes: attributes, children: unwrap(children), state: checkState(children))
+    return .regular(name: TagName.{{var.name}}.name, attributes: attributes, children: unwrap(children), state: checkState(children))
   }
 
   public static func {{ var.name }}(_ attributes: Set<Attribute>, _ children: [Node]) -> Node {
-    return .tag(name: TagName.{{var.name}}.name, attributes: attributes, children: unwrap(children), state: checkState(children))
+    return .regular(name: TagName.{{var.name}}.name, attributes: attributes, children: unwrap(children), state: checkState(children))
   }
 
   public static func {{ var.name }}(_ children: Node...) -> Node {
-    return .tag(name: TagName.{{var.name}}.name, attributes: Set(), children: unwrap(children), state: checkState(children))
+    return .regular(name: TagName.{{var.name}}.name, attributes: Set(), children: unwrap(children), state: checkState(children))
   }
 
   public static func {{ var.name }}(_ children: [Node]) -> Node {
-    return .tag(name: TagName.{{var.name}}.name, attributes: Set(), children: unwrap(children), state: checkState(children))
+    return .regular(name: TagName.{{var.name}}.name, attributes: Set(), children: unwrap(children), state: checkState(children))
   }
 
   public static func {{ var.name }}(_ attributes: Set<Attribute>) -> Node {
-    return .tag(name: TagName.{{var.name}}.name, attributes: attributes, children: [], state: .complete)
+    return .regular(name: TagName.{{var.name}}.name, attributes: attributes, children: [], state: .complete)
   }
       {% endif %}
 
       {% if var|annotated:"selfClosingTag" %}
   public static func {{ var.name }}(_ attributes: Set<Attribute> = Set()) -> Node {
-    return .selfClosingTag(name: TagName.{{var.name}}.name, attributes: attributes)
+    return .selfClosing(name: TagName.{{var.name}}.name, attributes: attributes)
   }
       {% endif %}
       {% endfor %}

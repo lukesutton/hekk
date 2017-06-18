@@ -30,7 +30,7 @@ public struct Renderer {
     switch node {
     case let .text(value):
         return [indent + value.stringValue]
-      case let .tag(name, attributes, children, _):
+      case let .regular(name, attributes, children, _):
         let attrs =  renderAttributes(attributes, forSpec: spec)
         let children = try children.flatMap { try renderNode($0, forSpec: spec, indentLevel: indentLevel + 1) }
         if attrs.isEmpty {
@@ -39,7 +39,7 @@ public struct Renderer {
         else {
           return ["\(indent)<\(name) \(attrs)>"] + children + ["\(indent)</\(name)>"]
         }
-      case let .selfClosingTag(name, attributes):
+      case let .selfClosing(name, attributes):
         let attrs =  renderAttributes(attributes, forSpec: spec)
         if attrs.isEmpty {
           return ["\(indent)<\(name)\(spec != .HTML5 ? "/" : "")>"]
