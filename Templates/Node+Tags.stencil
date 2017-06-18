@@ -3,28 +3,57 @@
 extension Node {
       {% for var in type.staticVariables %}
       {% if var|annotated:"regularTag" %}
+  /**
+    Generates a `Node.regular` with the tag name `{{var.name}}`. This is one of a number of
+    overloaded methods for this tag name.
+  */
   public static func {{ var.name }}(_ attributes: Set<Attribute>, _ children: Node...) -> Node {
     return .regular(name: TagName.{{var.name}}.name, attributes: attributes, children: unwrap(children), state: checkState(children))
   }
 
+  /**
+    Generates a `Node.regular` with the tag name `{{var.name}}`. This is one of a number of
+    overloaded methods for this tag name.
+  */
   public static func {{ var.name }}(_ attributes: Set<Attribute>, _ children: [Node]) -> Node {
     return .regular(name: TagName.{{var.name}}.name, attributes: attributes, children: unwrap(children), state: checkState(children))
   }
 
+  /**
+    Generates a `Node.regular` with the tag name `{{var.name}}`. This is one of a number of
+    overloaded methods for this tag name.
+
+    It generates a tag with children only, using a variadic argument.
+  */
   public static func {{ var.name }}(_ children: Node...) -> Node {
     return .regular(name: TagName.{{var.name}}.name, attributes: Set(), children: unwrap(children), state: checkState(children))
   }
 
+  /**
+    Generates a `Node.regular` with the tag name `{{var.name}}`. This is one of a number of
+    overloaded methods for this tag name.
+
+    It generates a tag with children only.
+  */
   public static func {{ var.name }}(_ children: [Node]) -> Node {
     return .regular(name: TagName.{{var.name}}.name, attributes: Set(), children: unwrap(children), state: checkState(children))
   }
 
+  /**
+    Generates a `Node.regular` with the tag name `{{var.name}}`. This is one of a number of
+    overloaded methods for this tag name.
+
+    It generates a tag with attributes only.
+  */
   public static func {{ var.name }}(_ attributes: Set<Attribute>) -> Node {
     return .regular(name: TagName.{{var.name}}.name, attributes: attributes, children: [], state: .complete)
   }
       {% endif %}
 
       {% if var|annotated:"selfClosingTag" %}
+  /**
+    Generates a `Node.selfClosing` with the tag name `{{var.name}}`. 
+  */
   public static func {{ var.name }}(_ attributes: Set<Attribute> = Set()) -> Node {
     return .selfClosing(name: TagName.{{var.name}}.name, attributes: attributes)
   }

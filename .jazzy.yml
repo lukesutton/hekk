@@ -1,0 +1,7 @@
+output: docs
+author: Luke Sutton
+author_url: https://github.com/lukesutton
+github_url: https://github.com/lukesutton/hekk
+root_url: https://lukesutton.github.io/hekk
+module: Hekk
+theme: fullwidth
