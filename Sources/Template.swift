@@ -2,17 +2,24 @@ public struct Template<State> {
   let initial: Node
   let process: (State, Node) -> Node?
 
-  public func step<S>(_ path: KeyPath<State, S>, fn: @escaping (S, Node) -> Node?) -> Template<State> {
+  public func step<S>(_ path: KeyPath<State, S>, _ fn: @escaping (S, Node) -> Node?) -> Template<State> {
     return Template<State>(initial: initial) { state, node in
       guard let update = self.process(state, node) else { return nil }
       return fn(state[keyPath: path], update)
     }
   }
 
-  public func step(fn: @escaping (State, Node) -> Node?) -> Template<State> {
+  public func step(_ fn: @escaping (State, Node) -> Node?) -> Template<State> {
     return Template<State>(initial: initial) { state, node in
       guard let update = self.process(state, node) else { return nil }
       return fn(state, update)
+    }
+  }
+
+  public func step(_ fn: @escaping (Node) -> Node?) -> Template<State> {
+    return Template<State>(initial: initial) { state, node in
+      guard let update = self.process(state, node) else { return nil }
+      return fn(update)
     }
   }
 
