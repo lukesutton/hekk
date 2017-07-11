@@ -1,8 +1,12 @@
 public struct Query {
   let check: Check
 
-  init(_ check: Check) {
+  public init(_ check: Check) {
     self.check = check
+  }
+
+  func run(node: Node) -> Bool {
+    return check.run(node)
   }
 }
 
@@ -46,6 +50,15 @@ extension Check {
 
   public static func test(_ test: @escaping (Node) -> Bool) -> Check {
     return Check(run: test)
+  }
+
+  public static func slot(named: String) -> Check {
+    return Check { node in
+      switch node {
+      case let .slot(n) where n == named: return true
+      default: return false
+      }
+    }
   }
 }
 
