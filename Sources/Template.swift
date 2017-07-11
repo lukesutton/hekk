@@ -1,5 +1,10 @@
 public struct Template<State> {
-  let initial: Node
+  enum Category {
+    case page(Document)
+    case partial(Node)
+  }
+
+  let initial: Category
   let process: (State, Node) -> Node?
 
   public func step<S>(_ path: KeyPath<State, S>, _ fn: @escaping (S, Node) -> Node?) -> Template<State> {
@@ -23,16 +28,28 @@ public struct Template<State> {
     }
   }
 
-  public func render(state: State) throws -> String {
-    guard let node = process(state, initial) else { throw EmptyTemplateError() }
-    let renderer = Renderer(.HTML5)
-    return try renderer.render(node)
+  public func render(state: State, spec: Renderer.Spec = .HTML5) throws -> String {
+    let renderer = Renderer(spec)
+
+    switch initial {
+    case let .page(doc):
+      guard let node = process(state, doc.root) else { throw EmptyTemplateError() }
+      return try renderer.render(Document(root: node))
+    case let .partial(node):
+      guard let node = process(state, node) else { throw EmptyTemplateError() }
+      return try renderer.render(node)
+    }
   }
 }
 
 extension Template {
   init(_ initial: Node) {
-    self.initial = initial
+    self.initial = .partial(initial)
+    self.process = { _, node in return node }
+  }
+
+  init(_ initial: Document) {
+    self.initial = .page(initial)
     self.process = { _, node in return node }
   }
 }
