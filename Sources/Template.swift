@@ -16,8 +16,10 @@ public struct Template<State> {
     }
   }
 
-  public func render(state: State) -> Node? {
-    return process(state, initial)
+  public func render(state: State) throws -> String {
+    guard let node = process(state, initial) else { throw EmptyTemplateError() }
+    let renderer = Renderer(.HTML5)
+    return try renderer.render(node)
   }
 }
 
